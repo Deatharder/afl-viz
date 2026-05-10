@@ -4,12 +4,16 @@
     "text": "Where the AFL is played",
     "subtitle": "Total matches in each state and territory, 1897 to 2025",
     "anchor": "start",
+    "frame": "group",
+    "offset": 8,
     "fontSize": 18,
     "subtitleFontSize": 13,
     "subtitleColor": "#5a5a5a"
   },
   "width": "container",
   "height": 480,
+  "padding": 0,
+  "autosize": { "type": "fit", "contains": "padding" },
   "background": null,
   "projection": {
     "type": "mercator",
@@ -39,7 +43,11 @@
           "type": "quantitative",
           "title": "Matches played",
           "scale": { "scheme": "reds", "type": "log" },
-          "legend": { "format": ",.0f" }
+          "legend": {
+            "format": ",.0f",
+            "orient": "right",
+            "offset": 8
+          }
         },
         "tooltip": [
           { "field": "properties.STATE_NAME", "type": "nominal", "title": "State" },
