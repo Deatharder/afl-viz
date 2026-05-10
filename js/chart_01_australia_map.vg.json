@@ -1,0 +1,95 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Where the AFL is played",
+    "subtitle": "Total matches in each state and territory, 1897 to 2025",
+    "anchor": "start",
+    "fontSize": 18,
+    "subtitleFontSize": 13,
+    "subtitleColor": "#5a5a5a"
+  },
+  "width": "container",
+  "height": 480,
+  "background": null,
+  "projection": {
+    "type": "mercator",
+    "center": [134, -28],
+    "scale": 700
+  },
+  "layer": [
+    {
+      "data": {
+        "url": "js/au_states.json",
+        "format": { "type": "json", "property": "features" }
+      },
+      "transform": [
+        {
+          "lookup": "properties.STATE_NAME",
+          "from": {
+            "data": { "url": "data/matches_by_state.csv" },
+            "key": "state",
+            "fields": ["matches"]
+          }
+        }
+      ],
+      "mark": { "type": "geoshape", "stroke": "white", "strokeWidth": 1 },
+      "encoding": {
+        "color": {
+          "field": "matches",
+          "type": "quantitative",
+          "title": "Matches played",
+          "scale": { "scheme": "reds", "type": "log" },
+          "legend": { "format": ",.0f" }
+        },
+        "tooltip": [
+          { "field": "properties.STATE_NAME", "type": "nominal", "title": "State" },
+          { "field": "matches", "type": "quantitative", "format": ",", "title": "Matches" }
+        ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          { "city": "Melbourne",  "lon": 144.9631, "lat": -37.8136 },
+          { "city": "Sydney",     "lon": 151.2093, "lat": -33.8688 },
+          { "city": "Brisbane",   "lon": 153.0260, "lat": -27.4698 },
+          { "city": "Perth",      "lon": 115.8605, "lat": -31.9505 },
+          { "city": "Adelaide",   "lon": 138.6007, "lat": -34.9285 },
+          { "city": "Hobart",     "lon": 147.3272, "lat": -42.8821 },
+          { "city": "Darwin",     "lon": 130.8456, "lat": -12.4634 },
+          { "city": "Canberra",   "lon": 149.1300, "lat": -35.2809 }
+        ]
+      },
+      "mark": { "type": "circle", "size": 28, "color": "#1a1a1a", "opacity": 0.7 },
+      "encoding": {
+        "longitude": { "field": "lon", "type": "quantitative" },
+        "latitude":  { "field": "lat", "type": "quantitative" },
+        "tooltip":   { "field": "city", "type": "nominal" }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          { "city": "Melbourne",  "lon": 144.9631, "lat": -37.8136 },
+          { "city": "Sydney",     "lon": 151.2093, "lat": -33.8688 },
+          { "city": "Brisbane",   "lon": 153.0260, "lat": -27.4698 },
+          { "city": "Perth",      "lon": 115.8605, "lat": -31.9505 },
+          { "city": "Adelaide",   "lon": 138.6007, "lat": -34.9285 },
+          { "city": "Hobart",     "lon": 147.3272, "lat": -42.8821 },
+          { "city": "Darwin",     "lon": 130.8456, "lat": -12.4634 },
+          { "city": "Canberra",   "lon": 149.1300, "lat": -35.2809 }
+        ]
+      },
+      "mark": { "type": "text", "dy": -10, "fontSize": 11, "fontStyle": "italic", "color": "#1a1a1a" },
+      "encoding": {
+        "longitude": { "field": "lon", "type": "quantitative" },
+        "latitude":  { "field": "lat", "type": "quantitative" },
+        "text":      { "field": "city", "type": "nominal" }
+      }
+    }
+  ],
+  "config": {
+    "view": { "stroke": null },
+    "font": "Source Sans 3, system-ui, sans-serif"
+  }
+}

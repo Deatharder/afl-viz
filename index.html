@@ -32,9 +32,9 @@
     <section class="pure-g">
       <div class="pure-u-1">
         <h2>The big picture across Australia</h2>
-        <p class="section-intro">Set the reader up: where AFL's reach is strongest today.</p>
-        <div id="vis_map" class="vis-container placeholder">Map goes here</div>
-        <p class="caption">Figure 1 · Caption goes here.</p>
+        <p class="section-intro">Across 129 seasons, more than four out of every five AFL matches have been played in Victoria. The map below makes the league's centre of gravity unmistakable.</p>
+        <div id="vis_map" class="vis-container"></div>
+        <p class="caption">Figure 1 · Total AFL/VFL matches played in each state and territory, 1897 to 2025. Source: AFL Tables match records.</p>
       </div>
     </section>
 
@@ -97,12 +97,17 @@
       <div class="pure-u-1">
         <h2>About</h2>
         <p><strong>Author:</strong> Dev Gupta · <strong>Student ID:</strong> 36695769 · <strong>Date:</strong> May 2026</p>
-        <p><strong>Data sources:</strong> AFL match data 1897–2025, ABS state population estimates.</p>
+        <p><strong>Data sources:</strong> <a href="https://github.com/akareen/AFL-Data-Analysis" target="_blank">AFL match data 1897–2025 (akareen/AFL-Data-Analysis)</a>, <a href="https://github.com/tonywr71/GeoJson-Data" target="_blank">Australian states GeoJSON (tonywr71)</a>.</p>
         <p><strong>GitHub:</strong> <a href="https://github.com/Deatharder/afl-viz" target="_blank">github.com/Deatharder/afl-viz</a></p>
-        <p class="ai-ack">Initial Vega-Lite scaffolding was AI-assisted; data analysis, narrative, and design choices are my own.</p>
+        <p class="ai-ack"><strong>Acknowledgement of AI use.</strong> Claude (Anthropic) was used as a learning aid throughout this assignment. Specifically: it explained Vega-Lite syntax and helped scaffold initial JSON spec templates that I then adapted to my data and design choices; it reviewed prose for grammar and clarity; and it suggested debugging steps when charts failed to render. The choice of topic, narrative, dataset, idiom selection, design decisions, and all written content are my own.</p>
       </div>
     </footer>
 
   </div>
+
+  <script>
+    const opts = { actions: false, renderer: "svg" };
+    vegaEmbed("#vis_map", "js/chart_01_australia_map.vg.json", opts).catch(console.error);
+  </script>
 </body>
 </html>
