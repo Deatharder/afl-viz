@@ -70,11 +70,12 @@ section.pure-g {
 .vis-container {
   width: 100%;
   margin-bottom: 12px;
-  margin-left: -4px;
 }
 
 .vis-container svg {
   display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 .placeholder {
@@ -91,6 +92,8 @@ section.pure-g {
   font-size: 13px;
   color: #5a5a5a;
   font-style: italic;
+  max-width: none;
+  margin-top: 0;
 }
 
 .metadata {
@@ -100,7 +103,7 @@ section.pure-g {
   font-size: 14px;
   color: #5a5a5a;
 }
-.metadata p { margin: 0 0 8px; }
+.metadata p { margin: 0 0 8px; max-width: none; }
 .metadata h2 { font-size: 22px; }
 .ai-ack { font-size: 13px; }
 
