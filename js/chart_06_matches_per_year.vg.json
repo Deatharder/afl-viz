@@ -6,8 +6,8 @@
     "anchor": "start",
     "frame": "group",
     "offset": 6,
-    "font": "Source Sans 3, system-ui, sans-serif",
-    "subtitleFont": "Source Sans 3, system-ui, sans-serif",
+    "font": "'Source Sans 3', system-ui, sans-serif",
+    "subtitleFont": "'Source Sans 3', system-ui, sans-serif",
     "fontSize": 14,
     "fontWeight": 600,
     "subtitleFontSize": 11,
@@ -25,18 +25,18 @@
       "type": "quantitative",
       "title": null,
       "scale": { "domain": [1895, 2027] },
-      "axis": { "format": "d", "tickCount": 5, "labelFont": "Source Sans 3, system-ui, sans-serif", "labelFontSize": 10 }
+      "axis": { "format": "d", "tickCount": 5, "labelFont": "'Source Sans 3', system-ui, sans-serif", "labelFontSize": 10 }
     },
     "y": {
       "field": "matches",
       "type": "quantitative",
       "title": "Matches",
-      "axis": { "labelFont": "Source Sans 3, system-ui, sans-serif", "titleFont": "Source Sans 3, system-ui, sans-serif", "labelFontSize": 10, "tickMinStep": 50 }
+      "axis": { "labelFont": "'Source Sans 3', system-ui, sans-serif", "titleFont": "'Source Sans 3', system-ui, sans-serif", "labelFontSize": 10, "tickMinStep": 50 }
     },
     "tooltip": [
       { "field": "year", "type": "quantitative", "title": "Year" },
       { "field": "matches", "type": "quantitative", "title": "Matches" }
     ]
   },
-  "config": { "view": { "stroke": null }, "axis": { "domainColor": "#cccccc", "tickColor": "#cccccc", "labelColor": "#5a5a5a", "grid": false } }
+  "config": { "view": { "stroke": null }, "axis": { "domainColor": "#cccccc", "tickColor": "#cccccc", "labelColor": "#5a5a5a", "grid": false }, "font": "'Source Sans 3', system-ui, sans-serif" }
 }

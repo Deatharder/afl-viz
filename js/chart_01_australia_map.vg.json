@@ -6,8 +6,8 @@
     "anchor": "start",
     "frame": "group",
     "offset": 8,
-    "font": "Source Sans 3, system-ui, sans-serif",
-    "subtitleFont": "Source Sans 3, system-ui, sans-serif",
+    "font": "'Source Sans 3', system-ui, sans-serif",
+    "subtitleFont": "'Source Sans 3', system-ui, sans-serif",
     "fontSize": 18,
     "fontWeight": 600,
     "subtitleFontSize": 13,
@@ -49,8 +49,8 @@
             "format": ",.0f",
             "orient": "right",
             "offset": 8,
-            "titleFont": "Source Sans 3, system-ui, sans-serif",
-            "labelFont": "Source Sans 3, system-ui, sans-serif"
+            "titleFont": "'Source Sans 3', system-ui, sans-serif",
+            "labelFont": "'Source Sans 3', system-ui, sans-serif"
           }
         },
         "tooltip": [
@@ -92,7 +92,7 @@
           { "city": "Canberra",   "lon": 149.1300, "lat": -35.2809 }
         ]
       },
-      "mark": { "type": "text", "dy": -10, "fontSize": 11, "fontStyle": "italic", "color": "#1a1a1a", "font": "Source Sans 3, system-ui, sans-serif" },
+      "mark": { "type": "text", "dy": -10, "fontSize": 11, "fontStyle": "italic", "color": "#1a1a1a", "font": "'Source Sans 3', system-ui, sans-serif" },
       "encoding": {
         "longitude": { "field": "lon", "type": "quantitative" },
         "latitude":  { "field": "lat", "type": "quantitative" },
@@ -102,6 +102,6 @@
   ],
   "config": {
     "view": { "stroke": null },
-    "font": "Source Sans 3, system-ui, sans-serif"
+    "font": "'Source Sans 3', system-ui, sans-serif"
   }
 }

@@ -2,29 +2,29 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": "Wins, losses, and longevity",
-    "subtitle": "Every club ever to play in the league. Bubble size shows total matches played.",
+    "subtitle": "Every club ever to play. Bubble size shows total matches played.",
     "anchor": "start",
     "frame": "group",
     "offset": 8,
-    "font": "Source Sans 3, system-ui, sans-serif",
-    "subtitleFont": "Source Sans 3, system-ui, sans-serif",
+    "font": "'Source Sans 3', system-ui, sans-serif",
+    "subtitleFont": "'Source Sans 3', system-ui, sans-serif",
     "fontSize": 18,
     "fontWeight": 600,
     "subtitleFontSize": 13,
     "subtitleColor": "#5a5a5a"
   },
   "width": "container",
-  "height": 380,
+  "height": 420,
   "padding": { "left": 0, "top": 0, "right": 16, "bottom": 0 },
   "background": null,
   "data": { "url": "data/team_record.csv" },
   "transform": [
     {
-      "calculate": "datum.team == 'Greater Western Sydney' ? 'GWS' : (datum.team == 'Western Bulldogs' ? 'W. Bulldogs' : (datum.team == 'North Melbourne' ? 'N. Melbourne' : (datum.team == 'Brisbane Lions' ? 'Brisbane' : (datum.team == 'Port Adelaide' ? 'Port' : datum.team))))",
+      "calculate": "datum.team == 'Greater Western Sydney' ? 'GWS' : (datum.team == 'Western Bulldogs' ? 'Bulldogs' : (datum.team == 'North Melbourne' ? 'Nth Melb' : (datum.team == 'Brisbane Lions' ? 'Brisbane' : (datum.team == 'Port Adelaide' ? 'Port' : datum.team))))",
       "as": "label"
     },
     {
-      "calculate": "datum.matches >= 1500 ? datum.label : ''",
+      "calculate": "datum.matches >= 800 ? datum.label : ''",
       "as": "label_visible"
     }
   ],
@@ -35,9 +35,9 @@
       "title": "Total wins",
       "scale": { "domain": [0, 1800] },
       "axis": {
-        "format": ",",
-        "labelFont": "Source Sans 3, system-ui, sans-serif",
-        "titleFont": "Source Sans 3, system-ui, sans-serif"
+        "format": ",d",
+        "labelFont": "'Source Sans 3', system-ui, sans-serif",
+        "titleFont": "'Source Sans 3', system-ui, sans-serif"
       }
     },
     "y": {
@@ -46,9 +46,9 @@
       "title": "Total losses",
       "scale": { "domain": [0, 1800] },
       "axis": {
-        "format": ",",
-        "labelFont": "Source Sans 3, system-ui, sans-serif",
-        "titleFont": "Source Sans 3, system-ui, sans-serif"
+        "format": ",d",
+        "labelFont": "'Source Sans 3', system-ui, sans-serif",
+        "titleFont": "'Source Sans 3', system-ui, sans-serif"
       }
     }
   },
@@ -67,6 +67,26 @@
       }
     },
     {
+      "data": {
+        "values": [
+          { "x": 1750, "y": 1700, "label": "Even win/loss line" }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "fontSize": 10,
+        "fontStyle": "italic",
+        "color": "#888888",
+        "font": "'Source Sans 3', system-ui, sans-serif",
+        "align": "right"
+      },
+      "encoding": {
+        "x": { "field": "x", "type": "quantitative" },
+        "y": { "field": "y", "type": "quantitative" },
+        "text": { "field": "label" }
+      }
+    },
+    {
       "mark": {
         "type": "circle",
         "opacity": 0.75,
@@ -78,11 +98,11 @@
           "field": "matches",
           "type": "quantitative",
           "title": "Matches played",
-          "scale": { "range": [60, 2000] },
+          "scale": { "range": [60, 1800] },
           "legend": {
-            "format": ",",
-            "labelFont": "Source Sans 3, system-ui, sans-serif",
-            "titleFont": "Source Sans 3, system-ui, sans-serif"
+            "format": ",d",
+            "labelFont": "'Source Sans 3', system-ui, sans-serif",
+            "titleFont": "'Source Sans 3', system-ui, sans-serif"
           }
         },
         "color": {
@@ -92,8 +112,8 @@
           "scale": { "scheme": "reds", "domain": [20, 60] },
           "legend": {
             "format": ".0f",
-            "labelFont": "Source Sans 3, system-ui, sans-serif",
-            "titleFont": "Source Sans 3, system-ui, sans-serif"
+            "labelFont": "'Source Sans 3', system-ui, sans-serif",
+            "titleFont": "'Source Sans 3', system-ui, sans-serif"
           }
         },
         "tooltip": [
@@ -109,37 +129,19 @@
       "mark": {
         "type": "text",
         "fontSize": 10,
+        "fontWeight": 500,
         "color": "#1a1a1a",
-        "font": "Source Sans 3, system-ui, sans-serif",
-        "dy": -22
+        "font": "'Source Sans 3', system-ui, sans-serif",
+        "dy": -24
       },
       "encoding": {
         "text": { "field": "label_visible", "type": "nominal" }
-      }
-    },
-    {
-      "data": {
-        "values": [
-          { "x": 1500, "y": 1380, "label": "Even win/loss line" }
-        ]
-      },
-      "mark": {
-        "type": "text",
-        "fontSize": 10,
-        "fontStyle": "italic",
-        "color": "#888888",
-        "font": "Source Sans 3, system-ui, sans-serif",
-        "align": "left"
-      },
-      "encoding": {
-        "x": { "field": "x", "type": "quantitative" },
-        "y": { "field": "y", "type": "quantitative" },
-        "text": { "field": "label" }
       }
     }
   ],
   "config": {
     "view": { "stroke": null },
-    "axis": { "domainColor": "#cccccc", "tickColor": "#cccccc", "labelColor": "#5a5a5a" }
+    "axis": { "domainColor": "#cccccc", "tickColor": "#cccccc", "labelColor": "#5a5a5a" },
+    "font": "'Source Sans 3', system-ui, sans-serif"
   }
 }
