@@ -1,0 +1,107 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "From eight clubs to eighteen",
+    "subtitle": "Number of clubs competing each season, 1897 to 2025",
+    "anchor": "start",
+    "frame": "group",
+    "offset": 8,
+    "font": "Source Sans 3, system-ui, sans-serif",
+    "subtitleFont": "Source Sans 3, system-ui, sans-serif",
+    "fontSize": 18,
+    "fontWeight": 600,
+    "subtitleFontSize": 13,
+    "subtitleColor": "#5a5a5a"
+  },
+  "width": "container",
+  "height": 360,
+  "padding": { "left": 0, "top": 0, "right": 20, "bottom": 0 },
+  "background": null,
+  "encoding": {
+    "x": {
+      "field": "year",
+      "type": "quantitative",
+      "title": null,
+      "scale": { "domain": [1895, 2027] },
+      "axis": {
+        "format": "d",
+        "tickCount": 8,
+        "labelFont": "Source Sans 3, system-ui, sans-serif",
+        "labelFontSize": 11
+      }
+    }
+  },
+  "layer": [
+    {
+      "data": { "url": "data/teams_in_league.csv" },
+      "mark": { "type": "area", "color": "#f4d4c8", "opacity": 0.6, "interpolate": "step-after" },
+      "encoding": {
+        "y": {
+          "field": "teams",
+          "type": "quantitative",
+          "title": "Clubs",
+          "scale": { "domain": [0, 20] },
+          "axis": {
+            "tickMinStep": 2,
+            "labelFont": "Source Sans 3, system-ui, sans-serif",
+            "titleFont": "Source Sans 3, system-ui, sans-serif"
+          }
+        }
+      }
+    },
+    {
+      "data": { "url": "data/teams_in_league.csv" },
+      "mark": { "type": "line", "color": "#a0252f", "strokeWidth": 2.5, "interpolate": "step-after" },
+      "encoding": {
+        "y": { "field": "teams", "type": "quantitative" },
+        "tooltip": [
+          { "field": "year", "type": "quantitative", "title": "Year" },
+          { "field": "teams", "type": "quantitative", "title": "Clubs" }
+        ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          { "year": 1925, "label": "Hawthorn, North Melbourne, Footscray join" },
+          { "year": 1987, "label": "League goes national: West Coast and Brisbane Bears" },
+          { "year": 1991, "label": "Adelaide" },
+          { "year": 1995, "label": "Fremantle" },
+          { "year": 1997, "label": "Port Adelaide" },
+          { "year": 2011, "label": "Gold Coast" },
+          { "year": 2012, "label": "GWS Giants" }
+        ]
+      },
+      "mark": { "type": "rule", "color": "#1a1a1a", "strokeDash": [3, 3], "opacity": 0.55 },
+      "encoding": {
+        "y": { "datum": 0 },
+        "y2": { "datum": 18 }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          { "year": 1925, "y": 19, "label": "1925" },
+          { "year": 1987, "y": 19, "label": "1987" },
+          { "year": 2012, "y": 19, "label": "2012" }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "fontSize": 11,
+        "fontStyle": "italic",
+        "color": "#1a1a1a",
+        "font": "Source Sans 3, system-ui, sans-serif"
+      },
+      "encoding": {
+        "y": { "field": "y", "type": "quantitative" },
+        "text": { "field": "label" }
+      }
+    }
+  ],
+  "config": {
+    "view": { "stroke": null },
+    "axis": { "domainColor": "#cccccc", "tickColor": "#cccccc", "labelColor": "#5a5a5a", "grid": false }
+  }
+}
