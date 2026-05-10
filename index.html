@@ -25,7 +25,7 @@
       <div class="pure-u-1">
         <p class="kicker">FIT2179 · Data Visualisation 2 · 2026</p>
         <h1>From Victoria to the Nation</h1>
-        <p class="lede">A 130-year story of the AFL, told in stadiums, ladders, and goals — how a breakaway competition from 1897 grew into Australia's most-watched football code.</p>
+        <p class="lede">A 130-year story of the AFL, told in stadiums, ladders, and goals. How a breakaway competition from 1897 grew into Australia's most-watched football code.</p>
       </div>
     </header>
 
@@ -42,8 +42,8 @@
       <div class="pure-u-1 pure-u-md-1-2">
         <div class="description description-left">
           <h2>Premiership cups, unevenly shared</h2>
-          <p>Sixteen clubs have lifted the cup in 128 grand finals. Three Melbourne foundation clubs — Collingwood, Carlton and Essendon — share nearly half of all premierships between them. Many of the newer interstate clubs have just one or two flags, and some, like Gold Coast and GWS, none yet.</p>
-          <p>The chart on the right ranks every club that has won at least one premiership.</p>
+          <p>Sixteen clubs have lifted the cup in 128 grand finals. Three Melbourne foundation clubs (Collingwood, Carlton and Essendon) share nearly half of all premierships between them.</p>
+          <p>Many of the newer interstate clubs have just one or two flags. Some, like Gold Coast and GWS, have none yet. The chart on the right ranks every club that has won at least one premiership.</p>
         </div>
       </div>
       <div class="pure-u-1 pure-u-md-1-2">
@@ -99,9 +99,9 @@
       <div class="pure-u-1">
         <h2>About</h2>
         <p><strong>Author:</strong> Dev Gupta · <strong>Student ID:</strong> 36695769 · <strong>Date:</strong> May 2026</p>
-        <p><strong>Data sources:</strong> <a href="https://github.com/akareen/AFL-Data-Analysis" target="_blank">AFL match data 1897–2025 (akareen/AFL-Data-Analysis)</a>, <a href="https://github.com/tonywr71/GeoJson-Data" target="_blank">Australian states GeoJSON (tonywr71)</a>.</p>
+        <p><strong>Data sources:</strong> <a href="https://github.com/akareen/AFL-Data-Analysis" target="_blank">AFL match data 1897 to 2025 (akareen/AFL-Data-Analysis)</a>, <a href="https://github.com/tonywr71/GeoJson-Data" target="_blank">Australian states GeoJSON (tonywr71)</a>.</p>
         <p><strong>GitHub:</strong> <a href="https://github.com/Deatharder/afl-viz" target="_blank">github.com/Deatharder/afl-viz</a></p>
-        <p class="ai-ack"><strong>Acknowledgement of AI use.</strong> Claude (Anthropic) was used as a learning aid throughout this assignment. Specifically: it explained Vega-Lite syntax and helped scaffold initial JSON spec templates that I then adapted to my data and design choices; it reviewed prose for grammar and clarity; and it suggested debugging steps when charts failed to render. The choice of topic, narrative, dataset, idiom selection, design decisions, and all written content are my own.</p>
+        <p class="ai-ack"><strong>Acknowledgement of AI use.</strong> Claude (Anthropic) was used as a learning aid throughout this assignment. It explained Vega-Lite syntax and helped scaffold initial JSON spec templates that I then adapted to my data and design choices. It also reviewed prose for grammar and clarity, and suggested debugging steps when charts failed to render. The choice of topic, narrative, dataset, idiom selection, design decisions, and all written content are my own.</p>
       </div>
     </footer>
 
@@ -109,7 +109,7 @@
 
   <script>
     const opts = { actions: false, renderer: "svg" };
-    vegaEmbed("#vis_map",          "js/chart_01_australia_map.vg.json",        opts).catch(console.error);
+    vegaEmbed("#vis_map",          "js/chart_01_australia_map.vg.json",         opts).catch(console.error);
     vegaEmbed("#vis_premierships", "js/chart_02_premierships_lollipop.vg.json", opts).catch(console.error);
     vegaEmbed("#vis_timeline",     "js/chart_03_teams_timeline.vg.json",        opts).catch(console.error);
   </script>

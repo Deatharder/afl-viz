@@ -19,24 +19,22 @@
   "background": null,
   "data": { "url": "data/premierships_per_team.csv" },
   "transform": [{ "filter": "datum.premierships > 0" }],
-  "encoding": {
-    "y": {
-      "field": "team",
-      "type": "nominal",
-      "sort": "-x",
-      "title": null,
-      "axis": {
-        "labelFontSize": 12,
-        "labelFont": "Source Sans 3, system-ui, sans-serif",
-        "domain": false,
-        "ticks": false
-      }
-    }
-  },
   "layer": [
     {
       "mark": { "type": "rule", "color": "#a0252f", "strokeWidth": 2 },
       "encoding": {
+        "y": {
+          "field": "team",
+          "type": "nominal",
+          "sort": "-x",
+          "title": null,
+          "axis": {
+            "labelFontSize": 12,
+            "labelFont": "Source Sans 3, system-ui, sans-serif",
+            "domain": false,
+            "ticks": false
+          }
+        },
         "x":  { "datum": 0 },
         "x2": { "field": "premierships" }
       }
@@ -44,6 +42,11 @@
     {
       "mark": { "type": "circle", "size": 260, "color": "#a0252f", "opacity": 1 },
       "encoding": {
+        "y": {
+          "field": "team",
+          "type": "nominal",
+          "sort": "-x"
+        },
         "x": {
           "field": "premierships",
           "type": "quantitative",
@@ -65,14 +68,27 @@
       "mark": {
         "type": "text",
         "align": "center",
+        "baseline": "middle",
         "color": "#ffffff",
         "fontSize": 11,
         "fontWeight": 700,
         "font": "Source Sans 3, system-ui, sans-serif"
       },
       "encoding": {
-        "x": { "field": "premierships", "type": "quantitative" },
-        "text": { "field": "premierships", "type": "quantitative", "format": "d" }
+        "y": {
+          "field": "team",
+          "type": "nominal",
+          "sort": "-x"
+        },
+        "x": {
+          "field": "premierships",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "premierships",
+          "type": "quantitative",
+          "format": "d"
+        }
       }
     }
   ],
