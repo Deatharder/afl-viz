@@ -1,5 +1,7 @@
 body {
-  font-family: system-ui, sans-serif;
+  font-family: "Source Sans 3", system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
   background: #ece6d8;
   color: #1a1a1a;
   margin: 0;
@@ -14,6 +16,26 @@ body {
 }
 
 h1 {
-  font-size: 64px;
-  margin-bottom: 8px;
+  font-family: "Bebas Neue", Impact, sans-serif;
+  font-size: 88px;
+  line-height: 0.95;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  margin: 0 0 16px;
+}
+
+.kicker {
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #a0252f;
+  margin: 0 0 8px;
+  font-weight: 600;
+}
+
+.lede {
+  font-size: 20px;
+  color: #5a5a5a;
+  max-width: 65ch;
+  margin: 0;
 }
