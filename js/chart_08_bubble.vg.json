@@ -1,0 +1,145 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Wins, losses, and longevity",
+    "subtitle": "Every club ever to play in the league. Bubble size shows total matches played.",
+    "anchor": "start",
+    "frame": "group",
+    "offset": 8,
+    "font": "Source Sans 3, system-ui, sans-serif",
+    "subtitleFont": "Source Sans 3, system-ui, sans-serif",
+    "fontSize": 18,
+    "fontWeight": 600,
+    "subtitleFontSize": 13,
+    "subtitleColor": "#5a5a5a"
+  },
+  "width": "container",
+  "height": 380,
+  "padding": { "left": 0, "top": 0, "right": 16, "bottom": 0 },
+  "background": null,
+  "data": { "url": "data/team_record.csv" },
+  "transform": [
+    {
+      "calculate": "datum.team == 'Greater Western Sydney' ? 'GWS' : (datum.team == 'Western Bulldogs' ? 'W. Bulldogs' : (datum.team == 'North Melbourne' ? 'N. Melbourne' : (datum.team == 'Brisbane Lions' ? 'Brisbane' : (datum.team == 'Port Adelaide' ? 'Port' : datum.team))))",
+      "as": "label"
+    },
+    {
+      "calculate": "datum.matches >= 1500 ? datum.label : ''",
+      "as": "label_visible"
+    }
+  ],
+  "encoding": {
+    "x": {
+      "field": "wins",
+      "type": "quantitative",
+      "title": "Total wins",
+      "scale": { "domain": [0, 1800] },
+      "axis": {
+        "format": ",",
+        "labelFont": "Source Sans 3, system-ui, sans-serif",
+        "titleFont": "Source Sans 3, system-ui, sans-serif"
+      }
+    },
+    "y": {
+      "field": "losses",
+      "type": "quantitative",
+      "title": "Total losses",
+      "scale": { "domain": [0, 1800] },
+      "axis": {
+        "format": ",",
+        "labelFont": "Source Sans 3, system-ui, sans-serif",
+        "titleFont": "Source Sans 3, system-ui, sans-serif"
+      }
+    }
+  },
+  "layer": [
+    {
+      "data": {
+        "values": [
+          { "x": 0, "y": 0 },
+          { "x": 1800, "y": 1800 }
+        ]
+      },
+      "mark": { "type": "line", "color": "#cccccc", "strokeDash": [4, 4], "strokeWidth": 1 },
+      "encoding": {
+        "x": { "field": "x", "type": "quantitative" },
+        "y": { "field": "y", "type": "quantitative" }
+      }
+    },
+    {
+      "mark": {
+        "type": "circle",
+        "opacity": 0.75,
+        "stroke": "#a0252f",
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "size": {
+          "field": "matches",
+          "type": "quantitative",
+          "title": "Matches played",
+          "scale": { "range": [60, 2000] },
+          "legend": {
+            "format": ",",
+            "labelFont": "Source Sans 3, system-ui, sans-serif",
+            "titleFont": "Source Sans 3, system-ui, sans-serif"
+          }
+        },
+        "color": {
+          "field": "win_pct",
+          "type": "quantitative",
+          "title": "Win %",
+          "scale": { "scheme": "reds", "domain": [20, 60] },
+          "legend": {
+            "format": ".0f",
+            "labelFont": "Source Sans 3, system-ui, sans-serif",
+            "titleFont": "Source Sans 3, system-ui, sans-serif"
+          }
+        },
+        "tooltip": [
+          { "field": "team", "type": "nominal", "title": "Club" },
+          { "field": "matches", "type": "quantitative", "format": ",", "title": "Matches" },
+          { "field": "wins", "type": "quantitative", "format": ",", "title": "Wins" },
+          { "field": "losses", "type": "quantitative", "format": ",", "title": "Losses" },
+          { "field": "win_pct", "type": "quantitative", "format": ".1f", "title": "Win %" }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "fontSize": 10,
+        "color": "#1a1a1a",
+        "font": "Source Sans 3, system-ui, sans-serif",
+        "dy": -22
+      },
+      "encoding": {
+        "text": { "field": "label_visible", "type": "nominal" }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          { "x": 1500, "y": 1380, "label": "Even win/loss line" }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "fontSize": 10,
+        "fontStyle": "italic",
+        "color": "#888888",
+        "font": "Source Sans 3, system-ui, sans-serif",
+        "align": "left"
+      },
+      "encoding": {
+        "x": { "field": "x", "type": "quantitative" },
+        "y": { "field": "y", "type": "quantitative" },
+        "text": { "field": "label" }
+      }
+    }
+  ],
+  "config": {
+    "view": { "stroke": null },
+    "axis": { "domainColor": "#cccccc", "tickColor": "#cccccc", "labelColor": "#5a5a5a" }
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Decades of dominance",
+    "subtitle": "Premierships won, by decade and club",
+    "anchor": "start",
+    "frame": "group",
+    "offset": 8,
+    "font": "Source Sans 3, system-ui, sans-serif",
+    "subtitleFont": "Source Sans 3, system-ui, sans-serif",
+    "fontSize": 18,
+    "fontWeight": 600,
+    "subtitleFontSize": 13,
+    "subtitleColor": "#5a5a5a"
+  },
+  "width": "container",
+  "height": 360,
+  "padding": { "left": 0, "top": 0, "right": 16, "bottom": 0 },
+  "background": null,
+  "data": { "url": "data/premierships_by_decade.csv" },
+  "transform": [
+    {
+      "calculate": "datum.team == 'Western Bulldogs' ? 'W. Bulldogs' : datum.team",
+      "as": "team_short"
+    }
+  ],
+  "encoding": {
+    "x": {
+      "field": "decade",
+      "type": "ordinal",
+      "title": null,
+      "axis": {
+        "labelFont": "Source Sans 3, system-ui, sans-serif",
+        "labelFontSize": 11,
+        "labelAngle": 0,
+        "domain": false,
+        "ticks": false
+      }
+    },
+    "y": {
+      "field": "team_short",
+      "type": "nominal",
+      "title": null,
+      "sort": {
+        "op": "sum",
+        "field": "premierships",
+        "order": "descending"
+      },
+      "axis": {
+        "labelFont": "Source Sans 3, system-ui, sans-serif",
+        "labelFontSize": 11,
+        "domain": false,
+        "ticks": false
+      }
+    }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "rect",
+        "stroke": "white",
+        "strokeWidth": 2,
+        "cornerRadius": 2
+      },
+      "encoding": {
+        "color": {
+          "field": "premierships",
+          "type": "quantitative",
+          "title": "Flags",
+          "scale": { "scheme": "reds", "domain": [0, 4] },
+          "legend": {
+            "format": "d",
+            "tickMinStep": 1,
+            "labelFont": "Source Sans 3, system-ui, sans-serif",
+            "titleFont": "Source Sans 3, system-ui, sans-serif"
+          }
+        },
+        "tooltip": [
+          { "field": "team", "type": "nominal", "title": "Club" },
+          { "field": "decade", "type": "ordinal", "title": "Decade" },
+          { "field": "premierships", "type": "quantitative", "title": "Premierships" }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "fontSize": 11,
+        "fontWeight": 600,
+        "font": "Source Sans 3, system-ui, sans-serif"
+      },
+      "encoding": {
+        "text": { "field": "premierships", "type": "quantitative", "format": "d" },
+        "color": {
+          "condition": {
+            "test": "datum.premierships >= 3",
+            "value": "white"
+          },
+          "value": "#1a1a1a"
+        }
+      }
+    }
+  ],
+  "config": {
+    "view": { "stroke": null },
+    "axis": { "domainColor": "#cccccc", "tickColor": "#cccccc", "labelColor": "#5a5a5a" }
+  }
+}

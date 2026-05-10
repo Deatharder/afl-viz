@@ -1,0 +1,42 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Longer seasons, more matches",
+    "subtitle": "Total matches played each season",
+    "anchor": "start",
+    "frame": "group",
+    "offset": 6,
+    "font": "Source Sans 3, system-ui, sans-serif",
+    "subtitleFont": "Source Sans 3, system-ui, sans-serif",
+    "fontSize": 14,
+    "fontWeight": 600,
+    "subtitleFontSize": 11,
+    "subtitleColor": "#5a5a5a"
+  },
+  "width": "container",
+  "height": 220,
+  "padding": { "left": 0, "top": 0, "right": 16, "bottom": 0 },
+  "background": null,
+  "data": { "url": "data/matches_per_year.csv" },
+  "mark": { "type": "area", "color": "#c8932b", "opacity": 0.85, "interpolate": "monotone" },
+  "encoding": {
+    "x": {
+      "field": "year",
+      "type": "quantitative",
+      "title": null,
+      "scale": { "domain": [1895, 2027] },
+      "axis": { "format": "d", "tickCount": 5, "labelFont": "Source Sans 3, system-ui, sans-serif", "labelFontSize": 10 }
+    },
+    "y": {
+      "field": "matches",
+      "type": "quantitative",
+      "title": "Matches",
+      "axis": { "labelFont": "Source Sans 3, system-ui, sans-serif", "titleFont": "Source Sans 3, system-ui, sans-serif", "labelFontSize": 10, "tickMinStep": 50 }
+    },
+    "tooltip": [
+      { "field": "year", "type": "quantitative", "title": "Year" },
+      { "field": "matches", "type": "quantitative", "title": "Matches" }
+    ]
+  },
+  "config": { "view": { "stroke": null }, "axis": { "domainColor": "#cccccc", "tickColor": "#cccccc", "labelColor": "#5a5a5a", "grid": false } }
+}

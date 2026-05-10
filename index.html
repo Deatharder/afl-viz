@@ -66,20 +66,29 @@
 
     <section class="pure-g">
       <div class="pure-u-1">
-        <h2>Small multiples</h2>
-        <p class="section-intro">Three short charts side by side.</p>
+        <h2>How the game itself has changed</h2>
+        <p class="section-intro">Three views of how AFL has evolved over 130 years: how high-scoring matches have become, how competitive results are, and how the season has grown longer.</p>
       </div>
-      <div class="pure-u-1 pure-u-md-1-3"><div id="vis_small1" class="vis-container placeholder">Chart 4</div></div>
-      <div class="pure-u-1 pure-u-md-1-3"><div id="vis_small2" class="vis-container placeholder">Chart 5</div></div>
-      <div class="pure-u-1 pure-u-md-1-3"><div id="vis_small3" class="vis-container placeholder">Chart 6</div></div>
+      <div class="pure-u-1 pure-u-md-1-3"><div id="vis_scoring" class="vis-container"></div></div>
+      <div class="pure-u-1 pure-u-md-1-3"><div id="vis_margin" class="vis-container"></div></div>
+      <div class="pure-u-1 pure-u-md-1-3"><div id="vis_matches" class="vis-container"></div></div>
     </section>
 
     <section class="pure-g">
-      <div class="pure-u-1 pure-u-md-1-2">
-        <div id="vis_heatmap" class="vis-container placeholder">Chart 7</div>
+      <div class="pure-u-1">
+        <h2>Decades of dominance</h2>
+        <p class="section-intro">A heatmap of every premiership decade by decade. Hawthorn's 1980s and Brisbane's early 2000s threepeat both stand out as the densest cells. Foundation clubs Carlton and Collingwood appear in nearly every decade.</p>
+        <div id="vis_heatmap" class="vis-container"></div>
+        <p class="caption">Figure 7 · Premierships won by each club, by decade. Cells without a value indicate the club did not win that decade.</p>
       </div>
-      <div class="pure-u-1 pure-u-md-1-2">
-        <div id="vis_scatter" class="vis-container placeholder">Chart 8</div>
+    </section>
+
+    <section class="pure-g">
+      <div class="pure-u-1">
+        <h2>A century of wins and losses</h2>
+        <p class="section-intro">Every club ever to play, plotted by their total wins against their total losses. The dashed line marks an even win/loss record. Bubble size shows total matches played; older Melbourne clubs sit in the top-right, while newer interstate sides cluster near the origin.</p>
+        <div id="vis_bubble" class="vis-container"></div>
+        <p class="caption">Figure 8 · Total wins versus total losses for every club to ever compete in the AFL/VFL, 1897 to 2025.</p>
       </div>
     </section>
 
@@ -112,6 +121,11 @@
     vegaEmbed("#vis_map",          "js/chart_01_australia_map.vg.json",         opts).catch(console.error);
     vegaEmbed("#vis_premierships", "js/chart_02_premierships_lollipop.vg.json", opts).catch(console.error);
     vegaEmbed("#vis_timeline",     "js/chart_03_teams_timeline.vg.json",        opts).catch(console.error);
+    vegaEmbed("#vis_scoring",      "js/chart_04_scoring_evolution.vg.json",     opts).catch(console.error);
+    vegaEmbed("#vis_margin",       "js/chart_05_margin_evolution.vg.json",      opts).catch(console.error);
+    vegaEmbed("#vis_matches",      "js/chart_06_matches_per_year.vg.json",      opts).catch(console.error);
+    vegaEmbed("#vis_heatmap",      "js/chart_07_heatmap.vg.json",               opts).catch(console.error);
+    vegaEmbed("#vis_bubble",       "js/chart_08_bubble.vg.json",                opts).catch(console.error);
   </script>
 </body>
 </html>

@@ -18,16 +18,24 @@
   "padding": { "left": 0, "top": 0, "right": 20, "bottom": 0 },
   "background": null,
   "data": { "url": "data/premierships_per_team.csv" },
-  "transform": [{ "filter": "datum.premierships > 0" }],
+  "transform": [
+    { "filter": "datum.premierships > 0" },
+    {
+      "calculate": "datum.team == 'Greater Western Sydney' ? 'GWS Giants' : (datum.team == 'Western Bulldogs' ? 'W. Bulldogs' : datum.team)",
+      "as": "team_short"
+    }
+  ],
   "encoding": {
     "y": {
-      "field": "team",
+      "field": "team_short",
       "type": "nominal",
       "sort": { "field": "premierships", "order": "descending" },
       "title": null,
       "axis": {
         "labelFontSize": 12,
         "labelFont": "Source Sans 3, system-ui, sans-serif",
+        "labelLimit": 200,
+        "labelPadding": 6,
         "domain": false,
         "ticks": false
       }
@@ -46,12 +54,7 @@
   },
   "layer": [
     {
-      "mark": {
-        "type": "bar",
-        "color": "#a0252f",
-        "height": 2,
-        "cornerRadius": 0
-      }
+      "mark": { "type": "bar", "color": "#a0252f", "height": 2, "cornerRadius": 0 }
     },
     {
       "mark": { "type": "circle", "size": 280, "color": "#a0252f", "opacity": 1 },
@@ -73,11 +76,7 @@
         "font": "Source Sans 3, system-ui, sans-serif"
       },
       "encoding": {
-        "text": {
-          "field": "premierships",
-          "type": "quantitative",
-          "format": "d"
-        }
+        "text": { "field": "premierships", "type": "quantitative", "format": "d" }
       }
     }
   ],

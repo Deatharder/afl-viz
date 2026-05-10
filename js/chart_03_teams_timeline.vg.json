@@ -39,7 +39,7 @@
         "y": {
           "field": "teams",
           "type": "quantitative",
-          "title": "Clubs",
+          "title": null,
           "scale": { "domain": [0, 20] },
           "axis": {
             "tickMinStep": 2,
@@ -56,20 +56,17 @@
         "y": { "field": "teams", "type": "quantitative" },
         "tooltip": [
           { "field": "year", "type": "quantitative", "title": "Year" },
-          { "field": "teams", "type": "quantitative", "title": "Clubs" }
+          { "field": "teams", "type": "quantitative", "title": "Clubs in league" }
         ]
       }
     },
     {
       "data": {
         "values": [
-          { "year": 1925, "label": "Hawthorn, North Melbourne, Footscray join" },
-          { "year": 1987, "label": "League goes national: West Coast and Brisbane Bears" },
-          { "year": 1991, "label": "Adelaide" },
-          { "year": 1995, "label": "Fremantle" },
-          { "year": 1997, "label": "Port Adelaide" },
-          { "year": 2011, "label": "Gold Coast" },
-          { "year": 2012, "label": "GWS Giants" }
+          { "year": 1925, "label": "1925: 3 clubs join" },
+          { "year": 1987, "label": "1987: league goes national" },
+          { "year": 1994, "label": "1991–97: SA & WA" },
+          { "year": 2012, "label": "2011–12: GC & GWS" }
         ]
       },
       "mark": { "type": "rule", "color": "#1a1a1a", "strokeDash": [3, 3], "opacity": 0.55 },
@@ -83,7 +80,8 @@
         "values": [
           { "year": 1925, "y": 19, "label": "1925" },
           { "year": 1987, "y": 19, "label": "1987" },
-          { "year": 2012, "y": 19, "label": "2012" }
+          { "year": 1994, "y": 19, "label": "1991–97" },
+          { "year": 2012, "y": 19, "label": "2011–12" }
         ]
       },
       "mark": {

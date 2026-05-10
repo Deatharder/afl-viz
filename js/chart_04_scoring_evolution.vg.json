@@ -1,0 +1,43 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Scoring through the eras",
+    "subtitle": "Average total points per match",
+    "anchor": "start",
+    "frame": "group",
+    "offset": 6,
+    "font": "Source Sans 3, system-ui, sans-serif",
+    "subtitleFont": "Source Sans 3, system-ui, sans-serif",
+    "fontSize": 14,
+    "fontWeight": 600,
+    "subtitleFontSize": 11,
+    "subtitleColor": "#5a5a5a"
+  },
+  "width": "container",
+  "height": 220,
+  "padding": { "left": 0, "top": 0, "right": 16, "bottom": 0 },
+  "background": null,
+  "data": { "url": "data/avg_score_per_year.csv" },
+  "mark": { "type": "line", "color": "#a0252f", "strokeWidth": 1.8, "interpolate": "monotone" },
+  "encoding": {
+    "x": {
+      "field": "year",
+      "type": "quantitative",
+      "title": null,
+      "scale": { "domain": [1895, 2027] },
+      "axis": { "format": "d", "tickCount": 5, "labelFont": "Source Sans 3, system-ui, sans-serif", "labelFontSize": 10 }
+    },
+    "y": {
+      "field": "avg_total_points",
+      "type": "quantitative",
+      "title": "Points",
+      "scale": { "domain": [50, 250] },
+      "axis": { "labelFont": "Source Sans 3, system-ui, sans-serif", "titleFont": "Source Sans 3, system-ui, sans-serif", "labelFontSize": 10, "tickMinStep": 50 }
+    },
+    "tooltip": [
+      { "field": "year", "type": "quantitative", "title": "Year" },
+      { "field": "avg_total_points", "type": "quantitative", "format": ".1f", "title": "Avg points" }
+    ]
+  },
+  "config": { "view": { "stroke": null }, "axis": { "domainColor": "#cccccc", "tickColor": "#cccccc", "labelColor": "#5a5a5a", "grid": false } }
+}
