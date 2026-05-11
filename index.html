@@ -94,7 +94,10 @@
 
     <section class="pure-g">
       <div class="pure-u-1">
-        <div id="vis_big" class="vis-container placeholder">Chart 9 — full width</div>
+        <h2>The stadium map</h2>
+        <p class="section-intro">Where matches have been played, across 32 different grounds in 130 years. Use the dropdown to focus on a single state. The M.C.G. alone has hosted more than 3,000 matches, more than every interstate stadium combined.</p>
+        <div id="vis_stadiums" class="vis-container"></div>
+        <p class="caption">Figure 9 · Locations of every stadium ever to host an AFL/VFL match. Bubble area is proportional to the total number of matches hosted at each ground.</p>
       </div>
     </section>
 
@@ -126,6 +129,7 @@
     vegaEmbed("#vis_matches",      "js/chart_06_matches_per_year.vg.json",      opts).catch(console.error);
     vegaEmbed("#vis_heatmap",      "js/chart_07_heatmap.vg.json",               opts).catch(console.error);
     vegaEmbed("#vis_bubble",       "js/chart_08_bubble.vg.json",                opts).catch(console.error);
+    vegaEmbed("#vis_stadiums",     "js/chart_09_stadium_map.vg.json",           opts).catch(console.error);
   </script>
 </body>
 </html>

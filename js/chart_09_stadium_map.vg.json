@@ -1,0 +1,125 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Every stadium that has hosted AFL football",
+    "subtitle": "Bubble size shows total matches hosted at each ground, 1897 to 2025. Use the dropdown to focus on a state.",
+    "anchor": "start",
+    "frame": "group",
+    "offset": 8,
+    "font": "'Source Sans 3', system-ui, sans-serif",
+    "subtitleFont": "'Source Sans 3', system-ui, sans-serif",
+    "fontSize": 18,
+    "fontWeight": 600,
+    "subtitleFontSize": 13,
+    "subtitleColor": "#5a5a5a"
+  },
+  "width": "container",
+  "height": 560,
+  "padding": { "left": 0, "top": 0, "right": 16, "bottom": 0 },
+  "background": null,
+  "params": [
+    {
+      "name": "state_filter",
+      "value": "All",
+      "bind": {
+        "input": "select",
+        "options": ["All", "Victoria", "New South Wales", "Queensland", "Western Australia", "South Australia", "Tasmania", "Northern Territory", "Australian Capital Territory"],
+        "labels": ["All states", "Victoria", "New South Wales", "Queensland", "Western Australia", "South Australia", "Tasmania", "Northern Territory", "ACT"],
+        "name": "Focus on: "
+      }
+    }
+  ],
+  "projection": {
+    "type": "mercator",
+    "center": [134, -28],
+    "scale": 700
+  },
+  "layer": [
+    {
+      "data": {
+        "url": "js/au_states.json",
+        "format": { "type": "json", "property": "features" }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#f4ebd9",
+        "stroke": "#d8cfb8",
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "tooltip": { "field": "properties.STATE_NAME", "type": "nominal", "title": "State" }
+      }
+    },
+    {
+      "data": { "url": "data/venues.csv" },
+      "mark": {
+        "type": "circle",
+        "stroke": "#a0252f",
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "longitude": { "field": "lon", "type": "quantitative" },
+        "latitude":  { "field": "lat", "type": "quantitative" },
+        "size": {
+          "field": "matches",
+          "type": "quantitative",
+          "title": "Matches hosted",
+          "scale": { "range": [50, 2200] },
+          "legend": {
+            "format": ",d",
+            "labelFont": "'Source Sans 3', system-ui, sans-serif",
+            "titleFont": "'Source Sans 3', system-ui, sans-serif"
+          }
+        },
+        "color": {
+          "condition": {
+            "test": "state_filter == 'All' || datum.state == state_filter",
+            "value": "#a0252f"
+          },
+          "value": "#dddddd"
+        },
+        "opacity": {
+          "condition": {
+            "test": "state_filter == 'All' || datum.state == state_filter",
+            "value": 0.75
+          },
+          "value": 0.2
+        },
+        "tooltip": [
+          { "field": "venue", "type": "nominal", "title": "Stadium" },
+          { "field": "state", "type": "nominal", "title": "State" },
+          { "field": "matches", "type": "quantitative", "format": ",", "title": "Matches hosted" }
+        ]
+      }
+    },
+    {
+      "data": { "url": "data/venues.csv" },
+      "transform": [{ "filter": "datum.matches >= 1000" }],
+      "mark": {
+        "type": "text",
+        "font": "'Source Sans 3', system-ui, sans-serif",
+        "fontSize": 10,
+        "fontStyle": "italic",
+        "color": "#1a1a1a",
+        "dy": -18,
+        "align": "center"
+      },
+      "encoding": {
+        "longitude": { "field": "lon", "type": "quantitative" },
+        "latitude":  { "field": "lat", "type": "quantitative" },
+        "text":      { "field": "venue", "type": "nominal" },
+        "opacity": {
+          "condition": {
+            "test": "state_filter == 'All' || datum.state == state_filter",
+            "value": 1
+          },
+          "value": 0
+        }
+      }
+    }
+  ],
+  "config": {
+    "view": { "stroke": null },
+    "font": "'Source Sans 3', system-ui, sans-serif"
+  }
+}
