@@ -1,0 +1,76 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "The home advantage",
+    "subtitle": "Win percentage at home vs away, since 1990",
+    "anchor": "start",
+    "frame": "group",
+    "offset": 8,
+    "font": "'Source Sans 3', system-ui, sans-serif",
+    "subtitleFont": "'Source Sans 3', system-ui, sans-serif",
+    "fontSize": 14,
+    "fontWeight": 600,
+    "subtitleFontSize": 11,
+    "subtitleColor": "#5a5a5a"
+  },
+  "width": "container",
+  "height": 360,
+  "padding": { "left": 0, "top": 0, "right": 16, "bottom": 0 },
+  "background": null,
+  "data": { "url": "data/home_away_winpct.csv" },
+  "encoding": {
+    "x": {
+      "field": "venue_type",
+      "type": "ordinal",
+      "title": null,
+      "sort": ["Home", "Away"],
+      "scale": { "padding": 0.5 },
+      "axis": {
+        "labelFontSize": 11,
+        "labelFont": "'Source Sans 3', system-ui, sans-serif",
+        "labelAngle": 0,
+        "domain": false,
+        "ticks": false
+      }
+    },
+    "y": {
+      "field": "win_pct",
+      "type": "quantitative",
+      "title": "Win %",
+      "scale": { "domain": [10, 80] },
+      "axis": {
+        "labelFont": "'Source Sans 3', system-ui, sans-serif",
+        "titleFont": "'Source Sans 3', system-ui, sans-serif",
+        "labelFontSize": 10
+      }
+    }
+  },
+  "layer": [
+    {
+      "mark": { "type": "line", "color": "#a0252f", "strokeWidth": 1.2, "opacity": 0.6 },
+      "encoding": {
+        "detail": { "field": "team", "type": "nominal" },
+        "tooltip": [
+          { "field": "team", "type": "nominal", "title": "Club" },
+          { "field": "venue_type", "type": "ordinal", "title": "Venue" },
+          { "field": "win_pct", "type": "quantitative", "format": ".1f", "title": "Win %" }
+        ]
+      }
+    },
+    {
+      "mark": { "type": "circle", "size": 60, "color": "#a0252f", "opacity": 0.85 },
+      "encoding": {
+        "tooltip": [
+          { "field": "team", "type": "nominal", "title": "Club" },
+          { "field": "venue_type", "type": "ordinal", "title": "Venue" },
+          { "field": "win_pct", "type": "quantitative", "format": ".1f", "title": "Win %" }
+        ]
+      }
+    }
+  ],
+  "config": {
+    "view": { "stroke": null },
+    "axis": { "domainColor": "#cccccc", "tickColor": "#cccccc", "labelColor": "#5a5a5a", "grid": false },
+    "font": "'Source Sans 3', system-ui, sans-serif"
+  }
+}

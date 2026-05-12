@@ -1,0 +1,72 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "How blowouts have changed",
+    "subtitle": "Distribution of winning margins, by era",
+    "anchor": "start",
+    "frame": "group",
+    "offset": 8,
+    "font": "'Source Sans 3', system-ui, sans-serif",
+    "subtitleFont": "'Source Sans 3', system-ui, sans-serif",
+    "fontSize": 14,
+    "fontWeight": 600,
+    "subtitleFontSize": 11,
+    "subtitleColor": "#5a5a5a"
+  },
+  "width": "container",
+  "height": 360,
+  "padding": { "left": 0, "top": 0, "right": 16, "bottom": 0 },
+  "background": null,
+  "data": { "url": "data/score_margins.csv" },
+  "transform": [
+    {
+      "density": "abs_margin",
+      "groupby": ["era"],
+      "extent": [0, 150],
+      "steps": 80
+    }
+  ],
+  "mark": { "type": "area", "color": "#a0252f", "opacity": 0.75, "interpolate": "monotone" },
+  "encoding": {
+    "x": {
+      "field": "value",
+      "type": "quantitative",
+      "title": "Winning margin (points)",
+      "axis": {
+        "labelFont": "'Source Sans 3', system-ui, sans-serif",
+        "titleFont": "'Source Sans 3', system-ui, sans-serif",
+        "labelFontSize": 10
+      }
+    },
+    "y": {
+      "field": "density",
+      "type": "quantitative",
+      "title": null,
+      "axis": null
+    },
+    "row": {
+      "field": "era",
+      "type": "ordinal",
+      "title": null,
+      "sort": ["1897 to 1929", "1930 to 1959", "1960 to 1989", "1990 to 2025"],
+      "header": {
+        "labelAngle": 0,
+        "labelAlign": "left",
+        "labelAnchor": "middle",
+        "labelFont": "'Source Sans 3', system-ui, sans-serif",
+        "labelFontSize": 11,
+        "labelFontWeight": 600
+      }
+    },
+    "tooltip": [
+      { "field": "era", "type": "ordinal", "title": "Era" },
+      { "field": "value", "type": "quantitative", "format": ".0f", "title": "Margin" },
+      { "field": "density", "type": "quantitative", "format": ".4f", "title": "Density" }
+    ]
+  },
+  "config": {
+    "view": { "stroke": null },
+    "axis": { "domainColor": "#cccccc", "tickColor": "#cccccc", "labelColor": "#5a5a5a", "grid": false },
+    "font": "'Source Sans 3', system-ui, sans-serif"
+  }
+}
