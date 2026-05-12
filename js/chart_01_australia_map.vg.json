@@ -98,6 +98,41 @@
         "latitude":  { "field": "lat", "type": "quantitative" },
         "text":      { "field": "city", "type": "nominal" }
       }
+    },
+    {
+      "data": {
+        "values": [{ "lon": 125, "lat": -27, "label": "13,598 matches" }]
+      },
+      "mark": {
+        "type": "text",
+        "fontSize": 14,
+        "fontWeight": 700,
+        "font": "'Source Sans 3', system-ui, sans-serif",
+        "color": "#1a1a1a",
+        "align": "right"
+      },
+      "encoding": {
+        "longitude": { "field": "lon", "type": "quantitative" },
+        "latitude":  { "field": "lat", "type": "quantitative" },
+        "text":      { "field": "label", "type": "nominal" }
+      }
+    },
+    {
+      "data": {
+        "values": [{ "lon": 125, "lat": -29, "label": "82% of all AFL games ever played" }]
+      },
+      "mark": {
+        "type": "text",
+        "fontSize": 11,
+        "font": "'Source Sans 3', system-ui, sans-serif",
+        "color": "#5a5a5a",
+        "align": "right"
+      },
+      "encoding": {
+        "longitude": { "field": "lon", "type": "quantitative" },
+        "latitude":  { "field": "lat", "type": "quantitative" },
+        "text":      { "field": "label", "type": "nominal" }
+      }
     }
   ],
   "config": {

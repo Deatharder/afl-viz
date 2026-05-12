@@ -26,7 +26,7 @@
       "steps": 80
     }
   ],
-  "mark": { "type": "area", "color": "#a0252f", "opacity": 0.75, "interpolate": "monotone" },
+  "mark": { "type": "line", "strokeWidth": 2.2, "interpolate": "monotone" },
   "encoding": {
     "x": {
       "field": "value",
@@ -44,24 +44,22 @@
       "title": null,
       "axis": null
     },
-    "row": {
+    "color": {
       "field": "era",
       "type": "ordinal",
-      "title": null,
       "sort": ["1897 to 1929", "1930 to 1959", "1960 to 1989", "1990 to 2025"],
-      "header": {
-        "labelAngle": 0,
-        "labelAlign": "left",
-        "labelAnchor": "middle",
+      "scale": { "range": ["#f4a896", "#d96c5c", "#a0252f", "#5a1318"] },
+      "legend": {
+        "title": null,
+        "orient": "top-right",
         "labelFont": "'Source Sans 3', system-ui, sans-serif",
-        "labelFontSize": 11,
-        "labelFontWeight": 600
+        "labelFontSize": 10,
+        "symbolType": "square"
       }
     },
     "tooltip": [
       { "field": "era", "type": "ordinal", "title": "Era" },
-      { "field": "value", "type": "quantitative", "format": ".0f", "title": "Margin" },
-      { "field": "density", "type": "quantitative", "format": ".4f", "title": "Density" }
+      { "field": "value", "type": "quantitative", "format": ".0f", "title": "Margin" }
     ]
   },
   "config": {

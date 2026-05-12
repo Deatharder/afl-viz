@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": "The home advantage",
-    "subtitle": "Win percentage at home vs away, since 1990",
+    "subtitle": "Win percentage at home vs away, by club, since 1990",
     "anchor": "start",
     "frame": "group",
     "offset": 8,
@@ -14,10 +14,16 @@
     "subtitleColor": "#5a5a5a"
   },
   "width": "container",
-  "height": 360,
-  "padding": { "left": 0, "top": 0, "right": 16, "bottom": 0 },
+  "height": 380,
+  "padding": { "left": 0, "top": 0, "right": 60, "bottom": 0 },
   "background": null,
   "data": { "url": "data/home_away_winpct.csv" },
+  "transform": [
+    {
+      "calculate": "datum.team == 'Greater Western Sydney' ? 'GWS' : (datum.team == 'Western Bulldogs' ? 'Bulldogs' : (datum.team == 'North Melbourne' ? 'Nth Melb' : (datum.team == 'Brisbane Lions' ? 'Brisbane' : (datum.team == 'Port Adelaide' ? 'Port' : datum.team))))",
+      "as": "label"
+    }
+  ],
   "encoding": {
     "x": {
       "field": "venue_type",
@@ -47,14 +53,9 @@
   },
   "layer": [
     {
-      "mark": { "type": "line", "color": "#a0252f", "strokeWidth": 1.2, "opacity": 0.6 },
+      "mark": { "type": "line", "color": "#a0252f", "strokeWidth": 1.2, "opacity": 0.55 },
       "encoding": {
-        "detail": { "field": "team", "type": "nominal" },
-        "tooltip": [
-          { "field": "team", "type": "nominal", "title": "Club" },
-          { "field": "venue_type", "type": "ordinal", "title": "Venue" },
-          { "field": "win_pct", "type": "quantitative", "format": ".1f", "title": "Win %" }
-        ]
+        "detail": { "field": "team", "type": "nominal" }
       }
     },
     {
@@ -65,6 +66,20 @@
           { "field": "venue_type", "type": "ordinal", "title": "Venue" },
           { "field": "win_pct", "type": "quantitative", "format": ".1f", "title": "Win %" }
         ]
+      }
+    },
+    {
+      "transform": [{ "filter": "datum.venue_type == 'Away'" }],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 8,
+        "fontSize": 9,
+        "font": "'Source Sans 3', system-ui, sans-serif",
+        "color": "#1a1a1a"
+      },
+      "encoding": {
+        "text": { "field": "label", "type": "nominal" }
       }
     }
   ],

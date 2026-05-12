@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": "Wins, losses, and longevity",
-    "subtitle": "Every club ever to play. Bubble size shows total matches played.",
+    "subtitle": "Every club ever to play. Bubble size shows total matches; colour shows win percentage. Hover for names.",
     "anchor": "start",
     "frame": "group",
     "offset": 8,
@@ -20,12 +20,8 @@
   "data": { "url": "data/team_record.csv" },
   "transform": [
     {
-      "calculate": "datum.team == 'Greater Western Sydney' ? 'GWS' : (datum.team == 'Western Bulldogs' ? 'Bulldogs' : (datum.team == 'North Melbourne' ? 'Nth Melb' : (datum.team == 'Brisbane Lions' ? 'Brisbane' : (datum.team == 'Port Adelaide' ? 'Port' : datum.team))))",
+      "calculate": "datum.team == 'Greater Western Sydney' ? 'GWS' : (datum.team == 'Gold Coast' ? 'Gold Coast' : (datum.team == 'University' ? 'University (defunct)' : (datum.team == 'Collingwood' ? 'Collingwood' : '')))",
       "as": "label"
-    },
-    {
-      "calculate": "datum.matches >= 800 ? datum.label : ''",
-      "as": "label_visible"
     }
   ],
   "encoding": {
@@ -54,12 +50,7 @@
   },
   "layer": [
     {
-      "data": {
-        "values": [
-          { "x": 0, "y": 0 },
-          { "x": 1800, "y": 1800 }
-        ]
-      },
+      "data": { "values": [{ "x": 0, "y": 0 }, { "x": 1800, "y": 1800 }] },
       "mark": { "type": "line", "color": "#cccccc", "strokeDash": [4, 4], "strokeWidth": 1 },
       "encoding": {
         "x": { "field": "x", "type": "quantitative" },
@@ -67,11 +58,7 @@
       }
     },
     {
-      "data": {
-        "values": [
-          { "x": 1750, "y": 1700, "label": "Even win/loss line" }
-        ]
-      },
+      "data": { "values": [{ "x": 1770, "y": 1700, "label": "Even win/loss line" }] },
       "mark": {
         "type": "text",
         "fontSize": 10,
@@ -132,10 +119,10 @@
         "fontWeight": 500,
         "color": "#1a1a1a",
         "font": "'Source Sans 3', system-ui, sans-serif",
-        "dy": -24
+        "dy": -26
       },
       "encoding": {
-        "text": { "field": "label_visible", "type": "nominal" }
+        "text": { "field": "label", "type": "nominal" }
       }
     }
   ],
