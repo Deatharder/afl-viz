@@ -20,7 +20,7 @@
   "data": { "url": "data/team_record.csv" },
   "transform": [
     {
-      "calculate": "datum.team == 'Greater Western Sydney' ? 'GWS' : (datum.team == 'Gold Coast' ? 'Gold Coast' : (datum.team == 'University' ? 'University (defunct)' : (datum.team == 'Collingwood' ? 'Collingwood' : '')))",
+      "calculate": "indexof(['Collingwood','Greater Western Sydney','Gold Coast','University'], datum.team) >= 0 ? (datum.team == 'Greater Western Sydney' ? 'GWS' : datum.team == 'University' ? 'University (defunct)' : datum.team) : ''",
       "as": "label"
     }
   ],
@@ -30,22 +30,14 @@
       "type": "quantitative",
       "title": "Total wins",
       "scale": { "domain": [0, 1800] },
-      "axis": {
-        "format": ",d",
-        "labelFont": "'Source Sans 3', system-ui, sans-serif",
-        "titleFont": "'Source Sans 3', system-ui, sans-serif"
-      }
+      "axis": { "format": ",d", "labelFont": "'Source Sans 3', system-ui, sans-serif", "titleFont": "'Source Sans 3', system-ui, sans-serif" }
     },
     "y": {
       "field": "losses",
       "type": "quantitative",
       "title": "Total losses",
       "scale": { "domain": [0, 1800] },
-      "axis": {
-        "format": ",d",
-        "labelFont": "'Source Sans 3', system-ui, sans-serif",
-        "titleFont": "'Source Sans 3', system-ui, sans-serif"
-      }
+      "axis": { "format": ",d", "labelFont": "'Source Sans 3', system-ui, sans-serif", "titleFont": "'Source Sans 3', system-ui, sans-serif" }
     }
   },
   "layer": [
@@ -59,14 +51,7 @@
     },
     {
       "data": { "values": [{ "x": 1770, "y": 1700, "label": "Even win/loss line" }] },
-      "mark": {
-        "type": "text",
-        "fontSize": 10,
-        "fontStyle": "italic",
-        "color": "#888888",
-        "font": "'Source Sans 3', system-ui, sans-serif",
-        "align": "right"
-      },
+      "mark": { "type": "text", "fontSize": 10, "fontStyle": "italic", "color": "#888888", "font": "'Source Sans 3', system-ui, sans-serif", "align": "right" },
       "encoding": {
         "x": { "field": "x", "type": "quantitative" },
         "y": { "field": "y", "type": "quantitative" },
@@ -74,34 +59,21 @@
       }
     },
     {
-      "mark": {
-        "type": "circle",
-        "opacity": 0.75,
-        "stroke": "#a0252f",
-        "strokeWidth": 1.5
-      },
+      "mark": { "type": "circle", "opacity": 0.75, "stroke": "#a0252f", "strokeWidth": 1.5 },
       "encoding": {
         "size": {
           "field": "matches",
           "type": "quantitative",
           "title": "Matches played",
           "scale": { "range": [60, 1800] },
-          "legend": {
-            "format": ",d",
-            "labelFont": "'Source Sans 3', system-ui, sans-serif",
-            "titleFont": "'Source Sans 3', system-ui, sans-serif"
-          }
+          "legend": { "format": ",d", "labelFont": "'Source Sans 3', system-ui, sans-serif", "titleFont": "'Source Sans 3', system-ui, sans-serif" }
         },
         "color": {
           "field": "win_pct",
           "type": "quantitative",
           "title": "Win %",
           "scale": { "scheme": "reds", "domain": [20, 60] },
-          "legend": {
-            "format": ".0f",
-            "labelFont": "'Source Sans 3', system-ui, sans-serif",
-            "titleFont": "'Source Sans 3', system-ui, sans-serif"
-          }
+          "legend": { "format": ".0f", "labelFont": "'Source Sans 3', system-ui, sans-serif", "titleFont": "'Source Sans 3', system-ui, sans-serif" }
         },
         "tooltip": [
           { "field": "team", "type": "nominal", "title": "Club" },
@@ -113,14 +85,8 @@
       }
     },
     {
-      "mark": {
-        "type": "text",
-        "fontSize": 10,
-        "fontWeight": 500,
-        "color": "#1a1a1a",
-        "font": "'Source Sans 3', system-ui, sans-serif",
-        "dy": -26
-      },
+      "transform": [{ "filter": "datum.label != ''" }],
+      "mark": { "type": "text", "fontSize": 10, "fontWeight": 600, "color": "#1a1a1a", "font": "'Source Sans 3', system-ui, sans-serif", "dy": -28 },
       "encoding": {
         "text": { "field": "label", "type": "nominal" }
       }

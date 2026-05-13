@@ -1,0 +1,128 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Every ground that has hosted AFL football",
+    "subtitle": "32 stadiums, 16,646 matches. Use the dropdown to focus on one state, or click a colour in the legend.",
+    "anchor": "start",
+    "frame": "group",
+    "offset": 8,
+    "font": "'Source Sans 3', system-ui, sans-serif",
+    "subtitleFont": "'Source Sans 3', system-ui, sans-serif",
+    "fontSize": 18,
+    "fontWeight": 600,
+    "subtitleFontSize": 13,
+    "subtitleColor": "#5a5a5a"
+  },
+  "width": "container",
+  "height": 620,
+  "padding": { "left": 0, "top": 0, "right": 16, "bottom": 0 },
+  "background": null,
+  "data": { "url": "data/venues.csv" },
+  "params": [
+    {
+      "name": "state_filter",
+      "value": "All",
+      "bind": {
+        "input": "select",
+        "options": ["All", "Victoria", "New South Wales", "Queensland", "Western Australia", "South Australia", "Tasmania", "Northern Territory", "Australian Capital Territory"],
+        "labels": ["All states", "Victoria", "New South Wales", "Queensland", "Western Australia", "South Australia", "Tasmania", "Northern Territory", "ACT"],
+        "name": "Focus on: "
+      }
+    },
+    {
+      "name": "legend_click",
+      "select": { "type": "point", "fields": ["state"] },
+      "bind": "legend"
+    }
+  ],
+  "encoding": {
+    "y": {
+      "field": "venue",
+      "type": "nominal",
+      "sort": { "field": "matches", "order": "descending", "op": "sum" },
+      "title": null,
+      "axis": {
+        "labelFontSize": 11,
+        "labelFont": "'Source Sans 3', system-ui, sans-serif",
+        "labelLimit": 200,
+        "labelPadding": 6,
+        "domain": false,
+        "ticks": false
+      }
+    },
+    "x": {
+      "field": "matches",
+      "type": "quantitative",
+      "title": "Matches hosted",
+      "axis": {
+        "format": ",d",
+        "labelFont": "'Source Sans 3', system-ui, sans-serif",
+        "titleFont": "'Source Sans 3', system-ui, sans-serif"
+      }
+    }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "bar",
+        "cornerRadiusEnd": 3,
+        "height": { "band": 0.72 }
+      },
+      "encoding": {
+        "color": {
+          "field": "state",
+          "type": "nominal",
+          "title": "State",
+          "scale": {
+            "domain": ["Victoria", "New South Wales", "Queensland", "Western Australia", "South Australia", "Tasmania", "Northern Territory", "Australian Capital Territory"],
+            "range":  ["#a0252f", "#2c5f5d", "#c8932b", "#7a4e8f", "#3a6e3a", "#1f6f8b", "#b85c1f", "#8a4f4f"]
+          },
+          "legend": {
+            "orient": "top",
+            "labelFont": "'Source Sans 3', system-ui, sans-serif",
+            "titleFont": "'Source Sans 3', system-ui, sans-serif",
+            "labelFontSize": 10,
+            "symbolType": "square",
+            "symbolSize": 80
+          }
+        },
+        "opacity": {
+          "condition": [
+            { "test": "state_filter != 'All' && datum.state != state_filter", "value": 0.15 },
+            { "param": "legend_click", "value": 0.92 }
+          ],
+          "value": 0.15
+        },
+        "tooltip": [
+          { "field": "venue", "type": "nominal", "title": "Stadium" },
+          { "field": "state", "type": "nominal", "title": "State" },
+          { "field": "matches", "type": "quantitative", "format": ",", "title": "Matches" }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 6,
+        "fontSize": 10,
+        "font": "'Source Sans 3', system-ui, sans-serif",
+        "color": "#5a5a5a"
+      },
+      "encoding": {
+        "text": { "field": "matches", "type": "quantitative", "format": "," },
+        "opacity": {
+          "condition": [
+            { "test": "state_filter != 'All' && datum.state != state_filter", "value": 0 }
+          ],
+          "value": 1
+        }
+      }
+    }
+  ],
+  "config": {
+    "view": { "stroke": null },
+    "axis": { "domainColor": "#cccccc", "tickColor": "#cccccc", "labelColor": "#5a5a5a", "grid": false },
+    "font": "'Source Sans 3', system-ui, sans-serif"
+  }
+}

@@ -22,44 +22,54 @@
     {
       "density": "abs_margin",
       "groupby": ["era"],
-      "extent": [0, 150],
-      "steps": 80
+      "extent": [0, 140],
+      "steps": 60
     }
   ],
-  "mark": { "type": "line", "strokeWidth": 2.2, "interpolate": "monotone" },
-  "encoding": {
-    "x": {
-      "field": "value",
-      "type": "quantitative",
-      "title": "Winning margin (points)",
-      "axis": {
-        "labelFont": "'Source Sans 3', system-ui, sans-serif",
-        "titleFont": "'Source Sans 3', system-ui, sans-serif",
-        "labelFontSize": 10
-      }
-    },
-    "y": {
-      "field": "density",
-      "type": "quantitative",
-      "title": null,
-      "axis": null
-    },
-    "color": {
+  "facet": {
+    "row": {
       "field": "era",
       "type": "ordinal",
       "sort": ["1897 to 1929", "1930 to 1959", "1960 to 1989", "1990 to 2025"],
-      "scale": { "range": ["#f4a896", "#d96c5c", "#a0252f", "#5a1318"] },
-      "legend": {
-        "title": null,
-        "orient": "top-right",
+      "title": null,
+      "header": {
+        "labelAngle": 0,
+        "labelAlign": "left",
+        "labelAnchor": "start",
+        "labelOrient": "top",
         "labelFont": "'Source Sans 3', system-ui, sans-serif",
         "labelFontSize": 10,
-        "symbolType": "square"
+        "labelFontWeight": 600,
+        "labelColor": "#1a1a1a"
       }
-    },
-    "tooltip": [
-      { "field": "era", "type": "ordinal", "title": "Era" },
-      { "field": "value", "type": "quantitative", "format": ".0f", "title": "Margin" }
+    }
+  },
+  "spec": {
+    "width": "container",
+    "height": 60,
+    "layer": [
+      {
+        "mark": { "type": "area", "color": "#a0252f", "opacity": 0.7, "interpolate": "monotone" },
+        "encoding": {
+          "x": {
+            "field": "value",
+            "type": "quantitative",
+            "title": "Winning margin (points)",
+            "axis": { "labelFont": "'Source Sans 3', system-ui, sans-serif", "titleFont": "'Source Sans 3', system-ui, sans-serif", "labelFontSize": 9, "titleFontSize": 10 }
+          },
+          "y": {
+            "field": "density",
+            "type": "quantitative",
+            "title": null,
+            "axis": null,
+            "scale": { "domain": [0, 0.04] }
+          },
+          "tooltip": [
+            { "field": "era", "type": "ordinal", "title": "Era" },
+            { "field": "value", "type": "quantitative", "format": ".0f", "title": "Margin" }
+          ]
+        }
+      }
     ]
   },
   "config": {

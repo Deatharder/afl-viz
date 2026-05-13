@@ -61,6 +61,46 @@
     },
     {
       "data": {
+        "url": "js/au_states.json",
+        "format": { "type": "json", "property": "features" }
+      },
+      "transform": [{ "filter": "datum.properties.STATE_NAME == 'Victoria'" }],
+      "mark": { "type": "geoshape", "fill": null, "stroke": "#1a1a1a", "strokeWidth": 2 }
+    },
+    {
+      "data": { "values": [{ "lon": 126, "lat": -32, "lon2": 142, "lat2": -37 }] },
+      "mark": { "type": "rule", "color": "#1a1a1a", "strokeWidth": 1.2 },
+      "encoding": {
+        "longitude":  { "field": "lon",  "type": "quantitative" },
+        "latitude":   { "field": "lat",  "type": "quantitative" },
+        "longitude2": { "field": "lon2" },
+        "latitude2":  { "field": "lat2" }
+      }
+    },
+    {
+      "data": { "values": [
+        { "lon": 126, "lat": -29.5, "label": "13,598 matches" }
+      ]},
+      "mark": { "type": "text", "align": "right", "font": "'Source Sans 3', system-ui, sans-serif", "fontSize": 16, "fontWeight": 700, "color": "#1a1a1a" },
+      "encoding": {
+        "longitude": { "field": "lon", "type": "quantitative" },
+        "latitude":  { "field": "lat", "type": "quantitative" },
+        "text":      { "field": "label" }
+      }
+    },
+    {
+      "data": { "values": [
+        { "lon": 126, "lat": -31.2, "label": "82% of all AFL games" }
+      ]},
+      "mark": { "type": "text", "align": "right", "font": "'Source Sans 3', system-ui, sans-serif", "fontSize": 12, "color": "#5a5a5a" },
+      "encoding": {
+        "longitude": { "field": "lon", "type": "quantitative" },
+        "latitude":  { "field": "lat", "type": "quantitative" },
+        "text":      { "field": "label" }
+      }
+    },
+    {
+      "data": {
         "values": [
           { "city": "Melbourne",  "lon": 144.9631, "lat": -37.8136 },
           { "city": "Sydney",     "lon": 151.2093, "lat": -33.8688 },
@@ -97,41 +137,6 @@
         "longitude": { "field": "lon", "type": "quantitative" },
         "latitude":  { "field": "lat", "type": "quantitative" },
         "text":      { "field": "city", "type": "nominal" }
-      }
-    },
-    {
-      "data": {
-        "values": [{ "lon": 125, "lat": -27, "label": "13,598 matches" }]
-      },
-      "mark": {
-        "type": "text",
-        "fontSize": 14,
-        "fontWeight": 700,
-        "font": "'Source Sans 3', system-ui, sans-serif",
-        "color": "#1a1a1a",
-        "align": "right"
-      },
-      "encoding": {
-        "longitude": { "field": "lon", "type": "quantitative" },
-        "latitude":  { "field": "lat", "type": "quantitative" },
-        "text":      { "field": "label", "type": "nominal" }
-      }
-    },
-    {
-      "data": {
-        "values": [{ "lon": 125, "lat": -29, "label": "82% of all AFL games ever played" }]
-      },
-      "mark": {
-        "type": "text",
-        "fontSize": 11,
-        "font": "'Source Sans 3', system-ui, sans-serif",
-        "color": "#5a5a5a",
-        "align": "right"
-      },
-      "encoding": {
-        "longitude": { "field": "lon", "type": "quantitative" },
-        "latitude":  { "field": "lat", "type": "quantitative" },
-        "text":      { "field": "label", "type": "nominal" }
       }
     }
   ],
