@@ -1,0 +1,171 @@
+team,decade,wins,losses,draws,matches
+Adelaide,1990s,101,105,1,207
+Adelaide,2000s,134,101,0,235
+Adelaide,2010s,125,103,1,229
+Adelaide,2020s,40,69,1,110
+Brisbane Lions,1980s,21,45,0,66
+Brisbane Lions,1990s,84,138,4,226
+Brisbane Lions,2000s,138,95,4,237
+Brisbane Lions,2010s,71,151,0,222
+Brisbane Lions,2020s,87,36,1,124
+Carlton,1890s,9,38,1,48
+Carlton,1900s,115,70,1,186
+Carlton,1910s,120,53,7,180
+Carlton,1920s,102,73,4,179
+Carlton,1930s,134,56,1,191
+Carlton,1940s,123,66,0,189
+Carlton,1950s,96,84,5,185
+Carlton,1960s,114,76,4,194
+Carlton,1970s,160,74,4,238
+Carlton,1980s,158,80,2,240
+Carlton,1990s,134,97,1,232
+Carlton,2000s,83,141,2,226
+Carlton,2010s,82,141,2,225
+Carlton,2020s,55,58,1,114
+Collingwood,1890s,35,17,0,52
+Collingwood,1900s,123,60,2,185
+Collingwood,1910s,119,58,3,180
+Collingwood,1920s,131,54,2,187
+Collingwood,1930s,146,52,3,201
+Collingwood,1940s,100,85,2,187
+Collingwood,1950s,128,69,1,198
+Collingwood,1960s,113,82,2,197
+Collingwood,1970s,153,84,3,240
+Collingwood,1980s,124,108,2,234
+Collingwood,1990s,108,112,4,224
+Collingwood,2000s,120,114,0,234
+Collingwood,2010s,145,89,3,237
+Collingwood,2020s,68,47,3,118
+Essendon,1890s,37,15,0,52
+Essendon,1900s,106,77,1,184
+Essendon,1910s,72,67,3,142
+Essendon,1920s,98,75,6,179
+Essendon,1930s,72,108,0,180
+Essendon,1940s,141,57,6,204
+Essendon,1950s,122,70,1,193
+Essendon,1960s,131,60,5,196
+Essendon,1970s,93,127,3,223
+Essendon,1980s,152,82,1,235
+Essendon,1990s,140,90,4,234
+Essendon,2000s,122,108,3,233
+Essendon,2010s,100,122,2,224
+Essendon,2020s,47,62,2,111
+Fremantle,1990s,37,73,0,110
+Fremantle,2000s,93,131,0,224
+Fremantle,2010s,119,111,1,231
+Fremantle,2020s,56,54,2,112
+Geelong,1890s,36,15,0,51
+Geelong,1900s,67,106,1,174
+Geelong,1910s,65,84,4,153
+Geelong,1920s,95,80,0,175
+Geelong,1930s,122,69,3,194
+Geelong,1940s,48,103,0,151
+Geelong,1950s,116,77,2,195
+Geelong,1960s,130,63,6,199
+Geelong,1970s,93,130,0,223
+Geelong,1980s,118,110,1,229
+Geelong,1990s,136,98,1,235
+Geelong,2000s,143,89,3,235
+Geelong,2010s,166,72,2,240
+Geelong,2020s,79,42,1,122
+Gold Coast,2010s,47,150,1,198
+Gold Coast,2020s,44,64,1,109
+Greater Western Sydney,2010s,82,102,3,187
+Greater Western Sydney,2020s,58,58,1,117
+Hawthorn,1920s,11,77,1,89
+Hawthorn,1930s,45,134,1,180
+Hawthorn,1940s,43,136,1,180
+Hawthorn,1950s,65,117,1,183
+Hawthorn,1960s,95,92,2,189
+Hawthorn,1970s,155,81,0,236
+Hawthorn,1980s,176,67,1,244
+Hawthorn,1990s,117,106,2,225
+Hawthorn,2000s,112,118,0,230
+Hawthorn,2010s,164,75,2,241
+Hawthorn,2020s,46,65,2,113
+Melbourne,1890s,24,26,1,51
+Melbourne,1900s,67,106,2,175
+Melbourne,1910s,35,87,1,123
+Melbourne,1920s,92,79,5,176
+Melbourne,1930s,99,86,1,186
+Melbourne,1940s,112,79,1,192
+Melbourne,1950s,118,74,4,196
+Melbourne,1960s,104,88,1,193
+Melbourne,1970s,73,146,1,220
+Melbourne,1980s,90,139,0,229
+Melbourne,1990s,104,123,1,228
+Melbourne,2000s,96,132,1,229
+Melbourne,2010s,76,145,2,223
+Melbourne,2020s,72,44,1,117
+North Melbourne,1920s,14,74,1,89
+North Melbourne,1930s,36,143,1,180
+North Melbourne,1940s,76,105,1,182
+North Melbourne,1950s,86,100,1,187
+North Melbourne,1960s,59,122,3,184
+North Melbourne,1970s,126,114,3,243
+North Melbourne,1980s,115,109,4,228
+North Melbourne,1990s,144,91,0,235
+North Melbourne,2000s,111,115,3,229
+North Melbourne,2010s,116,112,0,228
+North Melbourne,2020s,16,93,1,110
+Port Adelaide,1990s,31,34,2,67
+Port Adelaide,2000s,134,100,2,236
+Port Adelaide,2010s,106,118,1,225
+Port Adelaide,2020s,78,41,0,119
+Richmond,1900s,12,24,0,36
+Richmond,1910s,61,104,2,167
+Richmond,1920s,112,70,2,184
+Richmond,1930s,133,59,2,194
+Richmond,1940s,120,70,2,192
+Richmond,1950s,76,104,1,181
+Richmond,1960s,93,93,3,189
+Richmond,1970s,147,87,3,237
+Richmond,1980s,102,122,1,225
+Richmond,1990s,93,127,1,221
+Richmond,2000s,85,135,3,223
+Richmond,2010s,130,99,2,231
+Richmond,2020s,50,61,4,115
+St Kilda,1890s,0,48,0,48
+St Kilda,1900s,44,129,1,174
+St Kilda,1910s,52,87,1,140
+St Kilda,1920s,68,100,2,170
+St Kilda,1930s,87,95,0,182
+St Kilda,1940s,34,136,4,174
+St Kilda,1950s,53,125,3,181
+St Kilda,1960s,117,74,1,192
+St Kilda,1970s,105,122,3,230
+St Kilda,1980s,48,170,2,220
+St Kilda,1990s,113,111,2,226
+St Kilda,2000s,115,114,3,232
+St Kilda,2010s,92,128,5,225
+St Kilda,2020s,58,55,0,113
+Sydney,1890s,24,24,1,49
+Sydney,1900s,87,89,1,177
+Sydney,1910s,112,49,3,164
+Sydney,1920s,77,95,2,174
+Sydney,1930s,107,83,1,191
+Sydney,1940s,90,93,1,184
+Sydney,1950s,72,106,3,181
+Sydney,1960s,55,127,2,184
+Sydney,1970s,71,149,2,222
+Sydney,1980s,109,115,0,224
+Sydney,1990s,84,138,3,225
+Sydney,2000s,127,105,3,235
+Sydney,2010s,153,87,2,242
+Sydney,2020s,70,47,1,118
+West Coast,1980s,31,36,0,67
+West Coast,1990s,156,85,2,243
+West Coast,2000s,114,114,3,231
+West Coast,2010s,139,95,1,235
+West Coast,2020s,32,79,0,111
+Western Bulldogs,1920s,29,59,1,89
+Western Bulldogs,1930s,70,109,2,181
+Western Bulldogs,1940s,100,81,2,183
+Western Bulldogs,1950s,91,95,2,188
+Western Bulldogs,1960s,69,118,0,187
+Western Bulldogs,1970s,99,118,5,222
+Western Bulldogs,1980s,87,134,2,223
+Western Bulldogs,1990s,124,102,4,230
+Western Bulldogs,2000s,105,120,4,229
+Western Bulldogs,2010s,108,121,0,229
+Western Bulldogs,2020s,68,49,0,117

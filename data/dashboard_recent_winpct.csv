@@ -1,0 +1,199 @@
+team,year,win_pct
+Adelaide,2015,60.9
+Adelaide,2016,70.8
+Adelaide,2017,68.0
+Adelaide,2018,54.5
+Adelaide,2019,45.5
+Adelaide,2020,17.6
+Adelaide,2021,31.8
+Adelaide,2022,36.4
+Adelaide,2023,47.8
+Adelaide,2024,34.8
+Adelaide,2025,100.0
+Brisbane Lions,2015,18.2
+Brisbane Lions,2016,13.6
+Brisbane Lions,2017,22.7
+Brisbane Lions,2018,22.7
+Brisbane Lions,2019,66.7
+Brisbane Lions,2020,78.9
+Brisbane Lions,2021,62.5
+Brisbane Lions,2022,68.0
+Brisbane Lions,2023,73.1
+Brisbane Lions,2024,66.7
+Brisbane Lions,2025,100.0
+Carlton,2015,18.2
+Carlton,2016,31.8
+Carlton,2017,27.3
+Carlton,2018,9.1
+Carlton,2019,31.8
+Carlton,2020,41.2
+Carlton,2021,36.4
+Carlton,2022,54.5
+Carlton,2023,57.7
+Carlton,2024,54.2
+Carlton,2025,0.0
+Collingwood,2015,45.5
+Collingwood,2016,40.9
+Collingwood,2017,40.9
+Collingwood,2018,65.4
+Collingwood,2019,66.7
+Collingwood,2020,52.6
+Collingwood,2021,27.3
+Collingwood,2022,68.0
+Collingwood,2023,80.8
+Collingwood,2024,52.2
+Collingwood,2025,66.7
+Essendon,2015,27.3
+Essendon,2016,13.6
+Essendon,2017,52.2
+Essendon,2018,54.5
+Essendon,2019,52.2
+Essendon,2020,35.3
+Essendon,2021,47.8
+Essendon,2022,31.8
+Essendon,2023,47.8
+Essendon,2024,47.8
+Essendon,2025,33.3
+Fremantle,2015,75.0
+Fremantle,2016,18.2
+Fremantle,2017,36.4
+Fremantle,2018,36.4
+Fremantle,2019,40.9
+Fremantle,2020,41.2
+Fremantle,2021,45.5
+Fremantle,2022,66.7
+Fremantle,2023,43.5
+Fremantle,2024,52.2
+Fremantle,2025,33.3
+Geelong,2015,52.4
+Geelong,2016,75.0
+Geelong,2017,64.0
+Geelong,2018,56.5
+Geelong,2019,68.0
+Geelong,2020,66.7
+Geelong,2021,68.0
+Geelong,2022,84.0
+Geelong,2023,43.5
+Geelong,2024,64.0
+Geelong,2025,33.3
+Gold Coast,2015,18.2
+Gold Coast,2016,27.3
+Gold Coast,2017,27.3
+Gold Coast,2018,18.2
+Gold Coast,2019,13.6
+Gold Coast,2020,29.4
+Gold Coast,2021,31.8
+Gold Coast,2022,45.5
+Gold Coast,2023,39.1
+Gold Coast,2024,47.8
+Gold Coast,2025,100.0
+Greater Western Sydney,2015,50.0
+Greater Western Sydney,2016,70.8
+Greater Western Sydney,2017,60.0
+Greater Western Sydney,2018,58.3
+Greater Western Sydney,2019,61.5
+Greater Western Sydney,2020,47.1
+Greater Western Sydney,2021,50.0
+Greater Western Sydney,2022,27.3
+Greater Western Sydney,2023,57.7
+Greater Western Sydney,2024,60.0
+Greater Western Sydney,2025,66.7
+Hawthorn,2015,73.1
+Hawthorn,2016,70.8
+Hawthorn,2017,45.5
+Hawthorn,2018,62.5
+Hawthorn,2019,50.0
+Hawthorn,2020,29.4
+Hawthorn,2021,31.8
+Hawthorn,2022,36.4
+Hawthorn,2023,30.4
+Hawthorn,2024,60.0
+Hawthorn,2025,100.0
+Melbourne,2015,31.8
+Melbourne,2016,45.5
+Melbourne,2017,54.5
+Melbourne,2018,64.0
+Melbourne,2019,22.7
+Melbourne,2020,52.9
+Melbourne,2021,80.0
+Melbourne,2022,66.7
+Melbourne,2023,64.0
+Melbourne,2024,47.8
+Melbourne,2025,0.0
+North Melbourne,2015,60.0
+North Melbourne,2016,52.2
+North Melbourne,2017,27.3
+North Melbourne,2018,54.5
+North Melbourne,2019,45.5
+North Melbourne,2020,17.6
+North Melbourne,2021,18.2
+North Melbourne,2022,9.1
+North Melbourne,2023,13.0
+North Melbourne,2024,13.0
+North Melbourne,2025,33.3
+Port Adelaide,2015,54.5
+Port Adelaide,2016,45.5
+Port Adelaide,2017,63.6
+Port Adelaide,2018,54.5
+Port Adelaide,2019,50.0
+Port Adelaide,2020,78.9
+Port Adelaide,2021,75.0
+Port Adelaide,2022,45.5
+Port Adelaide,2023,68.0
+Port Adelaide,2024,65.4
+Port Adelaide,2025,33.3
+Richmond,2015,65.2
+Richmond,2016,36.4
+Richmond,2017,72.0
+Richmond,2018,79.2
+Richmond,2019,76.0
+Richmond,2020,71.4
+Richmond,2021,40.9
+Richmond,2022,56.5
+Richmond,2023,43.5
+Richmond,2024,8.7
+Richmond,2025,33.3
+St Kilda,2015,27.3
+St Kilda,2016,54.5
+St Kilda,2017,50.0
+St Kilda,2018,18.2
+St Kilda,2019,40.9
+St Kilda,2020,57.9
+St Kilda,2021,45.5
+St Kilda,2022,50.0
+St Kilda,2023,54.2
+St Kilda,2024,47.8
+St Kilda,2025,66.7
+Sydney,2015,66.7
+Sydney,2016,73.1
+Sydney,2017,62.5
+Sydney,2018,60.9
+Sydney,2019,36.4
+Sydney,2020,29.4
+Sydney,2021,65.2
+Sydney,2022,72.0
+Sydney,2023,50.0
+Sydney,2024,73.1
+Sydney,2025,33.3
+West Coast,2015,72.0
+West Coast,2016,69.6
+West Coast,2017,52.2
+West Coast,2018,76.0
+West Coast,2019,66.7
+West Coast,2020,66.7
+West Coast,2021,45.5
+West Coast,2022,9.1
+West Coast,2023,13.0
+West Coast,2024,21.7
+West Coast,2025,0.0
+Western Bulldogs,2015,60.9
+Western Bulldogs,2016,73.1
+Western Bulldogs,2017,50.0
+Western Bulldogs,2018,36.4
+Western Bulldogs,2019,52.2
+Western Bulldogs,2020,55.6
+Western Bulldogs,2021,69.2
+Western Bulldogs,2022,52.2
+Western Bulldogs,2023,52.2
+Western Bulldogs,2024,58.3
+Western Bulldogs,2025,66.7
