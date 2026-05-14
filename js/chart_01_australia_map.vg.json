@@ -68,7 +68,7 @@
       "mark": { "type": "geoshape", "fill": null, "stroke": "#1a1a1a", "strokeWidth": 2 }
     },
     {
-      "data": { "values": [{ "lon": 126, "lat": -32, "lon2": 142, "lat2": -37 }] },
+      "data": { "values": [{ "lon": 148, "lat": -37.5, "lon2": 155, "lat2": -42.5 }] },
       "mark": { "type": "rule", "color": "#1a1a1a", "strokeWidth": 1.2 },
       "encoding": {
         "longitude":  { "field": "lon",  "type": "quantitative" },
@@ -79,9 +79,9 @@
     },
     {
       "data": { "values": [
-        { "lon": 126, "lat": -29.5, "label": "13,598 matches" }
+        { "lon": 155, "lat": -41, "label": "13,598 matches" }
       ]},
-      "mark": { "type": "text", "align": "right", "font": "'Source Sans 3', system-ui, sans-serif", "fontSize": 16, "fontWeight": 700, "color": "#1a1a1a" },
+      "mark": { "type": "text", "align": "left", "font": "'Source Sans 3', system-ui, sans-serif", "fontSize": 16, "fontWeight": 700, "color": "#1a1a1a" },
       "encoding": {
         "longitude": { "field": "lon", "type": "quantitative" },
         "latitude":  { "field": "lat", "type": "quantitative" },
@@ -90,9 +90,9 @@
     },
     {
       "data": { "values": [
-        { "lon": 126, "lat": -31.2, "label": "82% of all AFL games" }
+        { "lon": 155, "lat": -42.8, "label": "82% of all AFL games" }
       ]},
-      "mark": { "type": "text", "align": "right", "font": "'Source Sans 3', system-ui, sans-serif", "fontSize": 12, "color": "#5a5a5a" },
+      "mark": { "type": "text", "align": "left", "font": "'Source Sans 3', system-ui, sans-serif", "fontSize": 12, "color": "#5a5a5a" },
       "encoding": {
         "longitude": { "field": "lon", "type": "quantitative" },
         "latitude":  { "field": "lat", "type": "quantitative" },

@@ -15,7 +15,7 @@
   },
   "width": "container",
   "height": 400,
-  "padding": { "left": 0, "top": 0, "right": 90, "bottom": 0 },
+  "padding": { "left": 0, "top": 0, "right": 16, "bottom": 0 },
   "background": null,
   "data": { "url": "data/home_away_winpct.csv" },
   "encoding": {
@@ -23,9 +23,9 @@
       "field": "venue_type",
       "type": "ordinal",
       "title": null,
-      "sort": ["Home", "Away"],
+      "sort": ["Away", "Home"],
       "scale": { "padding": 0.5 },
-      "axis": { "labelFontSize": 11, "labelFont": "'Source Sans 3', system-ui, sans-serif", "labelAngle": 0, "domain": false, "ticks": false }
+      "axis": { "labelFontSize": 12, "labelFont": "'Source Sans 3', system-ui, sans-serif", "labelAngle": 0, "domain": false, "ticks": false }
     },
     "y": {
       "field": "win_pct",
@@ -38,7 +38,7 @@
   "layer": [
     {
       "transform": [{ "filter": "datum.team != 'Geelong' && datum.team != 'Gold Coast'" }],
-      "mark": { "type": "line", "color": "#a0252f", "strokeWidth": 1, "opacity": 0.35 },
+      "mark": { "type": "line", "color": "#a0252f", "strokeWidth": 1, "opacity": 0.25 },
       "encoding": { "detail": { "field": "team", "type": "nominal" } }
     },
     {
@@ -64,18 +64,29 @@
     {
       "data": {
         "values": [
-          { "x": "Home", "y": 74.1, "label": "Geelong (74% at Kardinia Park)", "color": "#3a6e3a", "align": "left", "dx": 12 },
-          { "x": "Away", "y": 18.5, "label": "Gold Coast (18% away)", "color": "#c8932b", "align": "left", "dx": 12 }
+          { "x": "Home", "y": 74.1, "label": "Geelong (74% at Kardinia Park)" }
         ]
       },
-      "mark": { "type": "text", "fontSize": 11, "fontWeight": 600, "font": "'Source Sans 3', system-ui, sans-serif" },
+      "mark": { "type": "text", "fontSize": 11, "fontWeight": 600, "font": "'Source Sans 3', system-ui, sans-serif", "align": "right", "dx": -10, "dy": -6 },
       "encoding": {
         "x": { "field": "x", "type": "ordinal" },
         "y": { "field": "y", "type": "quantitative" },
         "text": { "field": "label" },
-        "color": { "field": "color", "type": "nominal", "scale": null },
-        "dx": { "field": "dx", "type": "quantitative" },
-        "align": { "field": "align", "type": "nominal" }
+        "color": { "value": "#3a6e3a" }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          { "x": "Away", "y": 18.5, "label": "Gold Coast (18% away)" }
+        ]
+      },
+      "mark": { "type": "text", "fontSize": 11, "fontWeight": 600, "font": "'Source Sans 3', system-ui, sans-serif", "align": "left", "dx": 10, "dy": 4 },
+      "encoding": {
+        "x": { "field": "x", "type": "ordinal" },
+        "y": { "field": "y", "type": "quantitative" },
+        "text": { "field": "label" },
+        "color": { "value": "#c8932b" }
       }
     }
   ],

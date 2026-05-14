@@ -92,8 +92,8 @@
             "fontWeight": 600,
             "color": "#5a5a5a"
           },
-          "width": "container",
-          "height": 240,
+          "width": 420,
+          "height": 200,
           "data": { "url": "data/dashboard_decades.csv" },
           "transform": [
             { "filter": "datum.team == club" },
@@ -105,7 +105,7 @@
               "field": "decade",
               "type": "ordinal",
               "title": null,
-              "axis": { "labelFont": "'Source Sans 3', system-ui, sans-serif", "labelAngle": 0, "labelFontSize": 10, "domain": false, "ticks": false }
+              "axis": { "labelFont": "'Source Sans 3', system-ui, sans-serif", "labelAngle": -45, "labelFontSize": 10, "domain": false, "ticks": false }
             },
             "y": {
               "aggregate": "sum",
@@ -137,8 +137,8 @@
             "fontWeight": 600,
             "color": "#5a5a5a"
           },
-          "width": "container",
-          "height": 240,
+          "width": 300,
+          "height": 200,
           "data": { "url": "data/dashboard_recent_winpct.csv" },
           "transform": [{ "filter": "datum.team == club" }],
           "layer": [
@@ -150,7 +150,7 @@
             {
               "mark": { "type": "area", "color": "#a0252f", "opacity": 0.25, "interpolate": "monotone" },
               "encoding": {
-                "x": { "field": "year", "type": "quantitative", "scale": { "domain": [2015, 2025] }, "title": null, "axis": { "format": "d", "tickCount": 5, "labelFont": "'Source Sans 3', system-ui, sans-serif", "labelFontSize": 10 } },
+                "x": { "field": "year", "type": "quantitative", "scale": { "domain": [2015, 2025] }, "title": null, "axis": { "format": "d", "tickCount": 6, "labelFont": "'Source Sans 3', system-ui, sans-serif", "labelFontSize": 10 } },
                 "y": { "field": "win_pct", "type": "quantitative", "scale": { "domain": [0, 100] }, "title": "Win %", "axis": { "labelFont": "'Source Sans 3', system-ui, sans-serif", "titleFont": "'Source Sans 3', system-ui, sans-serif", "labelFontSize": 10 } }
               }
             },
@@ -180,6 +180,7 @@
   "config": {
     "view": { "stroke": null },
     "axis": { "domainColor": "#cccccc", "tickColor": "#cccccc", "labelColor": "#5a5a5a", "grid": false },
+    "concat": { "spacing": 20 },
     "font": "'Source Sans 3', system-ui, sans-serif"
   }
 }
