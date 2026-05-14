@@ -15,28 +15,74 @@
   },
   "width": "container",
   "height": 220,
-  "padding": { "left": 0, "top": 0, "right": 16, "bottom": 0 },
+  "padding": {
+    "left": 0,
+    "top": 0,
+    "right": 16,
+    "bottom": 0
+  },
   "background": null,
-  "data": { "url": "data/matches_per_year.csv" },
-  "mark": { "type": "area", "color": "#c8932b", "opacity": 0.85, "interpolate": "monotone" },
+  "data": {
+    "url": "data/matches_per_year.csv"
+  },
+  "mark": {
+    "type": "area",
+    "color": "#c8932b",
+    "opacity": 0.85,
+    "interpolate": "monotone"
+  },
   "encoding": {
     "x": {
       "field": "year",
       "type": "quantitative",
       "title": null,
-      "scale": { "domain": [1895, 2027] },
-      "axis": { "format": "d", "tickCount": 5, "labelFont": "'Source Sans 3', system-ui, sans-serif", "labelFontSize": 10 }
+      "scale": {
+        "domain": [
+          1895,
+          2027
+        ]
+      },
+      "axis": {
+        "format": "d",
+        "tickCount": 5,
+        "labelFont": "'Source Sans 3', system-ui, sans-serif",
+        "labelFontSize": 10
+      }
     },
     "y": {
       "field": "matches",
       "type": "quantitative",
       "title": "Matches",
-      "axis": { "labelFont": "'Source Sans 3', system-ui, sans-serif", "titleFont": "'Source Sans 3', system-ui, sans-serif", "labelFontSize": 10, "tickMinStep": 50 }
+      "axis": {
+        "labelFont": "'Source Sans 3', system-ui, sans-serif",
+        "titleFont": "'Source Sans 3', system-ui, sans-serif",
+        "labelFontSize": 10,
+        "tickMinStep": 50
+      }
     },
     "tooltip": [
-      { "field": "year", "type": "quantitative", "title": "Year" },
-      { "field": "matches", "type": "quantitative", "title": "Matches" }
+      {
+        "field": "year",
+        "type": "quantitative",
+        "title": "Year"
+      },
+      {
+        "field": "matches",
+        "type": "quantitative",
+        "title": "Matches"
+      }
     ]
   },
-  "config": { "view": { "stroke": null }, "axis": { "domainColor": "#cccccc", "tickColor": "#cccccc", "labelColor": "#5a5a5a", "grid": false }, "font": "'Source Sans 3', system-ui, sans-serif" }
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "domainColor": "#cccccc",
+      "tickColor": "#cccccc",
+      "labelColor": "#5a5a5a",
+      "grid": false
+    },
+    "font": "'Source Sans 3', system-ui, sans-serif"
+  }
 }

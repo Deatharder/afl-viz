@@ -15,36 +15,58 @@
   },
   "width": "container",
   "height": 480,
-  "padding": { "left": 0, "top": 0, "right": 60, "bottom": 0 },
+  "padding": {
+    "left": 0,
+    "top": 0,
+    "right": 60,
+    "bottom": 0
+  },
   "background": null,
   "projection": {
     "type": "mercator",
-    "center": [134, -28],
+    "center": [
+      134,
+      -28
+    ],
     "scale": 700
   },
   "layer": [
     {
       "data": {
         "url": "js/au_states.json",
-        "format": { "type": "json", "property": "features" }
+        "format": {
+          "type": "json",
+          "property": "features"
+        }
       },
       "transform": [
         {
           "lookup": "properties.STATE_NAME",
           "from": {
-            "data": { "url": "data/matches_by_state.csv" },
+            "data": {
+              "url": "data/matches_by_state.csv"
+            },
             "key": "state",
-            "fields": ["matches"]
+            "fields": [
+              "matches"
+            ]
           }
         }
       ],
-      "mark": { "type": "geoshape", "stroke": "white", "strokeWidth": 1 },
+      "mark": {
+        "type": "geoshape",
+        "stroke": "white",
+        "strokeWidth": 1
+      },
       "encoding": {
         "color": {
           "field": "matches",
           "type": "quantitative",
           "title": "Matches played",
-          "scale": { "scheme": "reds", "type": "log" },
+          "scale": {
+            "scheme": "reds",
+            "type": "log"
+          },
           "legend": {
             "format": ",.0f",
             "orient": "right",
@@ -54,94 +76,275 @@
           }
         },
         "tooltip": [
-          { "field": "properties.STATE_NAME", "type": "nominal", "title": "State" },
-          { "field": "matches", "type": "quantitative", "format": ",", "title": "Matches" }
+          {
+            "field": "properties.STATE_NAME",
+            "type": "nominal",
+            "title": "State"
+          },
+          {
+            "field": "matches",
+            "type": "quantitative",
+            "format": ",",
+            "title": "Matches"
+          }
         ]
       }
     },
     {
       "data": {
         "url": "js/au_states.json",
-        "format": { "type": "json", "property": "features" }
+        "format": {
+          "type": "json",
+          "property": "features"
+        }
       },
-      "transform": [{ "filter": "datum.properties.STATE_NAME == 'Victoria'" }],
-      "mark": { "type": "geoshape", "fill": null, "stroke": "#1a1a1a", "strokeWidth": 2 }
-    },
-    {
-      "data": { "values": [{ "lon": 148, "lat": -37.5, "lon2": 155, "lat2": -42.5 }] },
-      "mark": { "type": "rule", "color": "#1a1a1a", "strokeWidth": 1.2 },
-      "encoding": {
-        "longitude":  { "field": "lon",  "type": "quantitative" },
-        "latitude":   { "field": "lat",  "type": "quantitative" },
-        "longitude2": { "field": "lon2" },
-        "latitude2":  { "field": "lat2" }
-      }
-    },
-    {
-      "data": { "values": [
-        { "lon": 155, "lat": -41, "label": "13,598 matches" }
-      ]},
-      "mark": { "type": "text", "align": "left", "font": "'Source Sans 3', system-ui, sans-serif", "fontSize": 16, "fontWeight": 700, "color": "#1a1a1a" },
-      "encoding": {
-        "longitude": { "field": "lon", "type": "quantitative" },
-        "latitude":  { "field": "lat", "type": "quantitative" },
-        "text":      { "field": "label" }
-      }
-    },
-    {
-      "data": { "values": [
-        { "lon": 155, "lat": -42.8, "label": "82% of all AFL games" }
-      ]},
-      "mark": { "type": "text", "align": "left", "font": "'Source Sans 3', system-ui, sans-serif", "fontSize": 12, "color": "#5a5a5a" },
-      "encoding": {
-        "longitude": { "field": "lon", "type": "quantitative" },
-        "latitude":  { "field": "lat", "type": "quantitative" },
-        "text":      { "field": "label" }
+      "transform": [
+        {
+          "filter": "datum.properties.STATE_NAME == 'Victoria'"
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "fill": null,
+        "stroke": "#1a1a1a",
+        "strokeWidth": 2
       }
     },
     {
       "data": {
         "values": [
-          { "city": "Melbourne",  "lon": 144.9631, "lat": -37.8136 },
-          { "city": "Sydney",     "lon": 151.2093, "lat": -33.8688 },
-          { "city": "Brisbane",   "lon": 153.0260, "lat": -27.4698 },
-          { "city": "Perth",      "lon": 115.8605, "lat": -31.9505 },
-          { "city": "Adelaide",   "lon": 138.6007, "lat": -34.9285 },
-          { "city": "Hobart",     "lon": 147.3272, "lat": -42.8821 },
-          { "city": "Darwin",     "lon": 130.8456, "lat": -12.4634 },
-          { "city": "Canberra",   "lon": 149.1300, "lat": -35.2809 }
+          {
+            "lon": 148,
+            "lat": -37.5,
+            "lon2": 155,
+            "lat2": -42.5
+          }
         ]
       },
-      "mark": { "type": "circle", "size": 28, "color": "#1a1a1a", "opacity": 0.7 },
+      "mark": {
+        "type": "rule",
+        "color": "#1a1a1a",
+        "strokeWidth": 1.2
+      },
       "encoding": {
-        "longitude": { "field": "lon", "type": "quantitative" },
-        "latitude":  { "field": "lat", "type": "quantitative" },
-        "tooltip":   { "field": "city", "type": "nominal" }
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "longitude2": {
+          "field": "lon2"
+        },
+        "latitude2": {
+          "field": "lat2"
+        }
       }
     },
     {
       "data": {
         "values": [
-          { "city": "Melbourne",  "lon": 144.9631, "lat": -37.8136 },
-          { "city": "Sydney",     "lon": 151.2093, "lat": -33.8688 },
-          { "city": "Brisbane",   "lon": 153.0260, "lat": -27.4698 },
-          { "city": "Perth",      "lon": 115.8605, "lat": -31.9505 },
-          { "city": "Adelaide",   "lon": 138.6007, "lat": -34.9285 },
-          { "city": "Hobart",     "lon": 147.3272, "lat": -42.8821 },
-          { "city": "Darwin",     "lon": 130.8456, "lat": -12.4634 },
-          { "city": "Canberra",   "lon": 149.1300, "lat": -35.2809 }
+          {
+            "lon": 155,
+            "lat": -41,
+            "label": "13,598 matches"
+          }
         ]
       },
-      "mark": { "type": "text", "dy": -10, "fontSize": 11, "fontStyle": "italic", "color": "#1a1a1a", "font": "'Source Sans 3', system-ui, sans-serif" },
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "font": "'Source Sans 3', system-ui, sans-serif",
+        "fontSize": 16,
+        "fontWeight": 700,
+        "color": "#1a1a1a"
+      },
       "encoding": {
-        "longitude": { "field": "lon", "type": "quantitative" },
-        "latitude":  { "field": "lat", "type": "quantitative" },
-        "text":      { "field": "city", "type": "nominal" }
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "label"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "lon": 155,
+            "lat": -42.8,
+            "label": "82% of all AFL games"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "font": "'Source Sans 3', system-ui, sans-serif",
+        "fontSize": 12,
+        "color": "#5a5a5a"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "label"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "city": "Melbourne",
+            "lon": 144.9631,
+            "lat": -37.8136
+          },
+          {
+            "city": "Sydney",
+            "lon": 151.2093,
+            "lat": -33.8688
+          },
+          {
+            "city": "Brisbane",
+            "lon": 153.0260,
+            "lat": -27.4698
+          },
+          {
+            "city": "Perth",
+            "lon": 115.8605,
+            "lat": -31.9505
+          },
+          {
+            "city": "Adelaide",
+            "lon": 138.6007,
+            "lat": -34.9285
+          },
+          {
+            "city": "Hobart",
+            "lon": 147.3272,
+            "lat": -42.8821
+          },
+          {
+            "city": "Darwin",
+            "lon": 130.8456,
+            "lat": -12.4634
+          },
+          {
+            "city": "Canberra",
+            "lon": 149.1300,
+            "lat": -35.2809
+          }
+        ]
+      },
+      "mark": {
+        "type": "circle",
+        "size": 28,
+        "color": "#1a1a1a",
+        "opacity": 0.7
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "tooltip": {
+          "field": "city",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "city": "Melbourne",
+            "lon": 144.9631,
+            "lat": -37.8136
+          },
+          {
+            "city": "Sydney",
+            "lon": 151.2093,
+            "lat": -33.8688
+          },
+          {
+            "city": "Brisbane",
+            "lon": 153.0260,
+            "lat": -27.4698
+          },
+          {
+            "city": "Perth",
+            "lon": 115.8605,
+            "lat": -31.9505
+          },
+          {
+            "city": "Adelaide",
+            "lon": 138.6007,
+            "lat": -34.9285
+          },
+          {
+            "city": "Hobart",
+            "lon": 147.3272,
+            "lat": -42.8821
+          },
+          {
+            "city": "Darwin",
+            "lon": 130.8456,
+            "lat": -12.4634
+          },
+          {
+            "city": "Canberra",
+            "lon": 149.1300,
+            "lat": -35.2809
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "dy": -10,
+        "fontSize": 11,
+        "fontStyle": "italic",
+        "color": "#1a1a1a",
+        "font": "'Source Sans 3', system-ui, sans-serif"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "city",
+          "type": "nominal"
+        }
       }
     }
   ],
   "config": {
-    "view": { "stroke": null },
+    "view": {
+      "stroke": null
+    },
     "font": "'Source Sans 3', system-ui, sans-serif"
   }
 }

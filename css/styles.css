@@ -8,7 +8,9 @@ body {
   padding: 0;
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
 .page {
   max-width: 1080px;
@@ -17,7 +19,8 @@ body {
   background: #ffffff;
 }
 
-h1, h2 {
+h1,
+h2 {
   font-family: "Bebas Neue", Impact, sans-serif;
   font-weight: 400;
   letter-spacing: 0.01em;
@@ -26,10 +29,19 @@ h1, h2 {
   margin: 0 0 12px;
 }
 
-h1 { font-size: 88px; line-height: 0.95; }
-h2 { font-size: 32px; }
+h1 {
+  font-size: 88px;
+  line-height: 0.95;
+}
 
-p { max-width: 65ch; margin: 0 0 1em; }
+h2 {
+  font-size: 32px;
+}
+
+p {
+  max-width: 65ch;
+  margin: 0 0 1em;
+}
 
 .kicker {
   font-size: 13px;
@@ -56,6 +68,7 @@ p { max-width: 65ch; margin: 0 0 1em; }
 
 section.pure-g {
   margin-bottom: 56px;
+  align-items: center;
 }
 
 .section-intro {
@@ -64,8 +77,13 @@ section.pure-g {
   margin-bottom: 20px;
 }
 
-.description-left  { padding-right: 24px; }
-.description-right { padding-left: 24px; }
+.description-left {
+  padding-right: 24px;
+}
+
+.description-right {
+  padding-left: 24px;
+}
 
 .vis-container {
   width: 100%;
@@ -104,14 +122,35 @@ section.pure-g {
   font-size: 14px;
   color: #5a5a5a;
 }
-.metadata p { margin: 0 0 8px; max-width: none; }
-.metadata h2 { font-size: 22px; }
-.ai-ack { font-size: 13px; }
 
-a { color: #a0252f; }
+.metadata p {
+  margin: 0 0 8px;
+  max-width: none;
+}
+
+.metadata h2 {
+  font-size: 22px;
+}
+
+.ai-ack {
+  font-size: 13px;
+}
+
+a {
+  color: #a0252f;
+}
 
 @media (max-width: 900px) {
-  .page { padding: 40px 24px; }
-  h1 { font-size: 56px; }
-  .description-left, .description-right { padding: 0; }
+  .page {
+    padding: 40px 24px;
+  }
+
+  h1 {
+    font-size: 56px;
+  }
+
+  .description-left,
+  .description-right {
+    padding: 0;
+  }
 }

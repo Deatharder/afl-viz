@@ -15,84 +15,222 @@
   },
   "width": "container",
   "height": 400,
-  "padding": { "left": 0, "top": 0, "right": 16, "bottom": 0 },
+  "padding": {
+    "left": 0,
+    "top": 0,
+    "right": 16,
+    "bottom": 0
+  },
   "background": null,
-  "data": { "url": "data/home_away_winpct.csv" },
+  "data": {
+    "url": "data/home_away_winpct.csv"
+  },
   "encoding": {
     "x": {
       "field": "venue_type",
       "type": "ordinal",
       "title": null,
-      "sort": ["Away", "Home"],
-      "scale": { "padding": 0.5 },
-      "axis": { "labelFontSize": 12, "labelFont": "'Source Sans 3', system-ui, sans-serif", "labelAngle": 0, "domain": false, "ticks": false }
+      "sort": [
+        "Away",
+        "Home"
+      ],
+      "scale": {
+        "padding": 0.5
+      },
+      "axis": {
+        "labelFontSize": 12,
+        "labelFont": "'Source Sans 3', system-ui, sans-serif",
+        "labelAngle": 0,
+        "domain": false,
+        "ticks": false
+      }
     },
     "y": {
       "field": "win_pct",
       "type": "quantitative",
       "title": "Win %",
-      "scale": { "domain": [10, 80] },
-      "axis": { "labelFont": "'Source Sans 3', system-ui, sans-serif", "titleFont": "'Source Sans 3', system-ui, sans-serif", "labelFontSize": 10 }
+      "scale": {
+        "domain": [
+          10,
+          80
+        ]
+      },
+      "axis": {
+        "labelFont": "'Source Sans 3', system-ui, sans-serif",
+        "titleFont": "'Source Sans 3', system-ui, sans-serif",
+        "labelFontSize": 10
+      }
     }
   },
   "layer": [
     {
-      "transform": [{ "filter": "datum.team != 'Geelong' && datum.team != 'Gold Coast'" }],
-      "mark": { "type": "line", "color": "#a0252f", "strokeWidth": 1, "opacity": 0.25 },
-      "encoding": { "detail": { "field": "team", "type": "nominal" } }
+      "transform": [
+        {
+          "filter": "datum.team != 'Geelong' && datum.team != 'Gold Coast'"
+        }
+      ],
+      "mark": {
+        "type": "line",
+        "color": "#a0252f",
+        "strokeWidth": 1,
+        "opacity": 0.25
+      },
+      "encoding": {
+        "detail": {
+          "field": "team",
+          "type": "nominal"
+        }
+      }
     },
     {
-      "transform": [{ "filter": "datum.team == 'Geelong'" }],
-      "mark": { "type": "line", "color": "#3a6e3a", "strokeWidth": 2.5, "opacity": 0.9 },
-      "encoding": { "detail": { "field": "team", "type": "nominal" } }
+      "transform": [
+        {
+          "filter": "datum.team == 'Geelong'"
+        }
+      ],
+      "mark": {
+        "type": "line",
+        "color": "#3a6e3a",
+        "strokeWidth": 2.5,
+        "opacity": 0.9
+      },
+      "encoding": {
+        "detail": {
+          "field": "team",
+          "type": "nominal"
+        }
+      }
     },
     {
-      "transform": [{ "filter": "datum.team == 'Gold Coast'" }],
-      "mark": { "type": "line", "color": "#c8932b", "strokeWidth": 2.5, "opacity": 0.9 },
-      "encoding": { "detail": { "field": "team", "type": "nominal" } }
+      "transform": [
+        {
+          "filter": "datum.team == 'Gold Coast'"
+        }
+      ],
+      "mark": {
+        "type": "line",
+        "color": "#c8932b",
+        "strokeWidth": 2.5,
+        "opacity": 0.9
+      },
+      "encoding": {
+        "detail": {
+          "field": "team",
+          "type": "nominal"
+        }
+      }
     },
     {
-      "mark": { "type": "circle", "size": 50, "color": "#a0252f", "opacity": 0.75 },
+      "mark": {
+        "type": "circle",
+        "size": 50,
+        "color": "#a0252f",
+        "opacity": 0.75
+      },
       "encoding": {
         "tooltip": [
-          { "field": "team", "type": "nominal", "title": "Club" },
-          { "field": "venue_type", "type": "ordinal", "title": "Venue" },
-          { "field": "win_pct", "type": "quantitative", "format": ".1f", "title": "Win %" }
+          {
+            "field": "team",
+            "type": "nominal",
+            "title": "Club"
+          },
+          {
+            "field": "venue_type",
+            "type": "ordinal",
+            "title": "Venue"
+          },
+          {
+            "field": "win_pct",
+            "type": "quantitative",
+            "format": ".1f",
+            "title": "Win %"
+          }
         ]
       }
     },
     {
       "data": {
         "values": [
-          { "x": "Home", "y": 74.1, "label": "Geelong (74% at Kardinia Park)" }
+          {
+            "x": "Home",
+            "y": 74.1,
+            "label": "Geelong (74% at Kardinia Park)"
+          }
         ]
       },
-      "mark": { "type": "text", "fontSize": 11, "fontWeight": 600, "font": "'Source Sans 3', system-ui, sans-serif", "align": "right", "dx": -10, "dy": -6 },
+      "mark": {
+        "type": "text",
+        "fontSize": 11,
+        "fontWeight": 600,
+        "font": "'Source Sans 3', system-ui, sans-serif",
+        "align": "right",
+        "dx": -10,
+        "dy": -6
+      },
       "encoding": {
-        "x": { "field": "x", "type": "ordinal" },
-        "y": { "field": "y", "type": "quantitative" },
-        "text": { "field": "label" },
-        "color": { "value": "#3a6e3a" }
+        "x": {
+          "field": "x",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "y",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "label"
+        },
+        "color": {
+          "value": "#3a6e3a"
+        }
       }
     },
     {
       "data": {
         "values": [
-          { "x": "Away", "y": 18.5, "label": "Gold Coast (18% away)" }
+          {
+            "x": "Away",
+            "y": 18.5,
+            "label": "Gold Coast (18% away)"
+          }
         ]
       },
-      "mark": { "type": "text", "fontSize": 11, "fontWeight": 600, "font": "'Source Sans 3', system-ui, sans-serif", "align": "left", "dx": 10, "dy": 4 },
+      "mark": {
+        "type": "text",
+        "fontSize": 11,
+        "fontWeight": 600,
+        "font": "'Source Sans 3', system-ui, sans-serif",
+        "align": "left",
+        "dx": 10,
+        "dy": 4
+      },
       "encoding": {
-        "x": { "field": "x", "type": "ordinal" },
-        "y": { "field": "y", "type": "quantitative" },
-        "text": { "field": "label" },
-        "color": { "value": "#c8932b" }
+        "x": {
+          "field": "x",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "y",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "label"
+        },
+        "color": {
+          "value": "#c8932b"
+        }
       }
     }
   ],
   "config": {
-    "view": { "stroke": null },
-    "axis": { "domainColor": "#cccccc", "tickColor": "#cccccc", "labelColor": "#5a5a5a", "grid": false },
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "domainColor": "#cccccc",
+      "tickColor": "#cccccc",
+      "labelColor": "#5a5a5a",
+      "grid": false
+    },
     "font": "'Source Sans 3', system-ui, sans-serif"
   }
 }

@@ -15,49 +15,130 @@
   },
   "width": "container",
   "height": 220,
-  "padding": { "left": 0, "top": 0, "right": 16, "bottom": 0 },
+  "padding": {
+    "left": 0,
+    "top": 0,
+    "right": 16,
+    "bottom": 0
+  },
   "background": null,
-  "data": { "url": "data/avg_margin_per_year.csv" },
+  "data": {
+    "url": "data/avg_margin_per_year.csv"
+  },
   "encoding": {
     "x": {
       "field": "year",
       "type": "quantitative",
       "title": null,
-      "scale": { "domain": [1895, 2027] },
-      "axis": { "format": "d", "tickCount": 5, "labelFont": "'Source Sans 3', system-ui, sans-serif", "labelFontSize": 10 }
+      "scale": {
+        "domain": [
+          1895,
+          2027
+        ]
+      },
+      "axis": {
+        "format": "d",
+        "tickCount": 5,
+        "labelFont": "'Source Sans 3', system-ui, sans-serif",
+        "labelFontSize": 10
+      }
     },
     "y": {
       "field": "avg_margin",
       "type": "quantitative",
       "title": "Points",
-      "axis": { "labelFont": "'Source Sans 3', system-ui, sans-serif", "titleFont": "'Source Sans 3', system-ui, sans-serif", "labelFontSize": 10, "tickMinStep": 10 }
+      "axis": {
+        "labelFont": "'Source Sans 3', system-ui, sans-serif",
+        "titleFont": "'Source Sans 3', system-ui, sans-serif",
+        "labelFontSize": 10,
+        "tickMinStep": 10
+      }
     }
   },
   "layer": [
-    { "mark": { "type": "line", "color": "#2c5f5d", "strokeWidth": 1.8, "interpolate": "monotone" } },
+    {
+      "mark": {
+        "type": "line",
+        "color": "#2c5f5d",
+        "strokeWidth": 1.8,
+        "interpolate": "monotone"
+      }
+    },
     {
       "params": [
         {
           "name": "hover5",
-          "select": { "type": "point", "fields": ["year"], "nearest": true, "on": "mouseover", "clear": "mouseout" }
+          "select": {
+            "type": "point",
+            "fields": [
+              "year"
+            ],
+            "nearest": true,
+            "on": "mouseover",
+            "clear": "mouseout"
+          }
         }
       ],
-      "mark": { "type": "circle", "size": 80, "color": "#2c5f5d", "opacity": 0 },
+      "mark": {
+        "type": "circle",
+        "size": 80,
+        "color": "#2c5f5d",
+        "opacity": 0
+      },
       "encoding": {
         "opacity": {
-          "condition": { "param": "hover5", "empty": false, "value": 1 },
+          "condition": {
+            "param": "hover5",
+            "empty": false,
+            "value": 1
+          },
           "value": 0
         },
         "tooltip": [
-          { "field": "year", "type": "quantitative", "title": "Year" },
-          { "field": "avg_margin", "type": "quantitative", "format": ".1f", "title": "Avg margin" }
+          {
+            "field": "year",
+            "type": "quantitative",
+            "title": "Year"
+          },
+          {
+            "field": "avg_margin",
+            "type": "quantitative",
+            "format": ".1f",
+            "title": "Avg margin"
+          }
         ]
       }
     },
     {
-      "transform": [{ "filter": { "param": "hover5", "empty": false } }],
-      "mark": { "type": "rule", "color": "#1a1a1a", "opacity": 0.4, "strokeDash": [2, 2] }
+      "transform": [
+        {
+          "filter": {
+            "param": "hover5",
+            "empty": false
+          }
+        }
+      ],
+      "mark": {
+        "type": "rule",
+        "color": "#1a1a1a",
+        "opacity": 0.4,
+        "strokeDash": [
+          2,
+          2
+        ]
+      }
     }
   ],
-  "config": { "view": { "stroke": null }, "axis": { "domainColor": "#cccccc", "tickColor": "#cccccc", "labelColor": "#5a5a5a", "grid": false }, "font": "'Source Sans 3', system-ui, sans-serif" }
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "domainColor": "#cccccc",
+      "tickColor": "#cccccc",
+      "labelColor": "#5a5a5a",
+      "grid": false
+    },
+    "font": "'Source Sans 3', system-ui, sans-serif"
+  }
 }

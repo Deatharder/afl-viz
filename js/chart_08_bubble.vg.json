@@ -15,9 +15,16 @@
   },
   "width": "container",
   "height": 420,
-  "padding": { "left": 0, "top": 0, "right": 16, "bottom": 0 },
+  "padding": {
+    "left": 0,
+    "top": 0,
+    "right": 16,
+    "bottom": 0
+  },
   "background": null,
-  "data": { "url": "data/team_record.csv" },
+  "data": {
+    "url": "data/team_record.csv"
+  },
   "transform": [
     {
       "calculate": "indexof(['Collingwood','Greater Western Sydney','Gold Coast','University'], datum.team) >= 0 ? (datum.team == 'Greater Western Sydney' ? 'GWS' : datum.team == 'University' ? 'University (defunct)' : datum.team) : ''",
@@ -29,72 +36,206 @@
       "field": "wins",
       "type": "quantitative",
       "title": "Total wins",
-      "scale": { "domain": [0, 1800] },
-      "axis": { "format": ",d", "labelFont": "'Source Sans 3', system-ui, sans-serif", "titleFont": "'Source Sans 3', system-ui, sans-serif" }
+      "scale": {
+        "domain": [
+          0,
+          1800
+        ]
+      },
+      "axis": {
+        "format": ",d",
+        "labelFont": "'Source Sans 3', system-ui, sans-serif",
+        "titleFont": "'Source Sans 3', system-ui, sans-serif"
+      }
     },
     "y": {
       "field": "losses",
       "type": "quantitative",
       "title": "Total losses",
-      "scale": { "domain": [0, 1800] },
-      "axis": { "format": ",d", "labelFont": "'Source Sans 3', system-ui, sans-serif", "titleFont": "'Source Sans 3', system-ui, sans-serif" }
+      "scale": {
+        "domain": [
+          0,
+          1800
+        ]
+      },
+      "axis": {
+        "format": ",d",
+        "labelFont": "'Source Sans 3', system-ui, sans-serif",
+        "titleFont": "'Source Sans 3', system-ui, sans-serif"
+      }
     }
   },
   "layer": [
     {
-      "data": { "values": [{ "x": 0, "y": 0 }, { "x": 1800, "y": 1800 }] },
-      "mark": { "type": "line", "color": "#cccccc", "strokeDash": [4, 4], "strokeWidth": 1 },
+      "data": {
+        "values": [
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 1800,
+            "y": 1800
+          }
+        ]
+      },
+      "mark": {
+        "type": "line",
+        "color": "#cccccc",
+        "strokeDash": [
+          4,
+          4
+        ],
+        "strokeWidth": 1
+      },
       "encoding": {
-        "x": { "field": "x", "type": "quantitative" },
-        "y": { "field": "y", "type": "quantitative" }
+        "x": {
+          "field": "x",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "y",
+          "type": "quantitative"
+        }
       }
     },
     {
-      "data": { "values": [{ "x": 1770, "y": 1700, "label": "Even win/loss line" }] },
-      "mark": { "type": "text", "fontSize": 10, "fontStyle": "italic", "color": "#888888", "font": "'Source Sans 3', system-ui, sans-serif", "align": "right" },
+      "data": {
+        "values": [
+          {
+            "x": 1770,
+            "y": 1700,
+            "label": "Even win/loss line"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "fontSize": 10,
+        "fontStyle": "italic",
+        "color": "#888888",
+        "font": "'Source Sans 3', system-ui, sans-serif",
+        "align": "right"
+      },
       "encoding": {
-        "x": { "field": "x", "type": "quantitative" },
-        "y": { "field": "y", "type": "quantitative" },
-        "text": { "field": "label" }
+        "x": {
+          "field": "x",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "y",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "label"
+        }
       }
     },
     {
-      "mark": { "type": "circle", "opacity": 0.75, "stroke": "#a0252f", "strokeWidth": 1.5 },
+      "mark": {
+        "type": "circle",
+        "opacity": 0.75,
+        "stroke": "#a0252f",
+        "strokeWidth": 1.5
+      },
       "encoding": {
         "size": {
           "field": "matches",
           "type": "quantitative",
           "title": "Matches played",
-          "scale": { "range": [60, 1800] },
-          "legend": { "format": ",d", "labelFont": "'Source Sans 3', system-ui, sans-serif", "titleFont": "'Source Sans 3', system-ui, sans-serif" }
+          "scale": {
+            "range": [
+              60,
+              1800
+            ]
+          },
+          "legend": {
+            "format": ",d",
+            "labelFont": "'Source Sans 3', system-ui, sans-serif",
+            "titleFont": "'Source Sans 3', system-ui, sans-serif"
+          }
         },
         "color": {
           "field": "win_pct",
           "type": "quantitative",
           "title": "Win %",
-          "scale": { "scheme": "reds", "domain": [20, 60] },
-          "legend": { "format": ".0f", "labelFont": "'Source Sans 3', system-ui, sans-serif", "titleFont": "'Source Sans 3', system-ui, sans-serif" }
+          "scale": {
+            "scheme": "reds",
+            "domain": [
+              20,
+              60
+            ]
+          },
+          "legend": {
+            "format": ".0f",
+            "labelFont": "'Source Sans 3', system-ui, sans-serif",
+            "titleFont": "'Source Sans 3', system-ui, sans-serif"
+          }
         },
         "tooltip": [
-          { "field": "team", "type": "nominal", "title": "Club" },
-          { "field": "matches", "type": "quantitative", "format": ",", "title": "Matches" },
-          { "field": "wins", "type": "quantitative", "format": ",", "title": "Wins" },
-          { "field": "losses", "type": "quantitative", "format": ",", "title": "Losses" },
-          { "field": "win_pct", "type": "quantitative", "format": ".1f", "title": "Win %" }
+          {
+            "field": "team",
+            "type": "nominal",
+            "title": "Club"
+          },
+          {
+            "field": "matches",
+            "type": "quantitative",
+            "format": ",",
+            "title": "Matches"
+          },
+          {
+            "field": "wins",
+            "type": "quantitative",
+            "format": ",",
+            "title": "Wins"
+          },
+          {
+            "field": "losses",
+            "type": "quantitative",
+            "format": ",",
+            "title": "Losses"
+          },
+          {
+            "field": "win_pct",
+            "type": "quantitative",
+            "format": ".1f",
+            "title": "Win %"
+          }
         ]
       }
     },
     {
-      "transform": [{ "filter": "datum.label != ''" }],
-      "mark": { "type": "text", "fontSize": 10, "fontWeight": 600, "color": "#1a1a1a", "font": "'Source Sans 3', system-ui, sans-serif", "dy": -28 },
+      "transform": [
+        {
+          "filter": "datum.label != ''"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 10,
+        "fontWeight": 600,
+        "color": "#1a1a1a",
+        "font": "'Source Sans 3', system-ui, sans-serif",
+        "dy": -28
+      },
       "encoding": {
-        "text": { "field": "label", "type": "nominal" }
+        "text": {
+          "field": "label",
+          "type": "nominal"
+        }
       }
     }
   ],
   "config": {
-    "view": { "stroke": null },
-    "axis": { "domainColor": "#cccccc", "tickColor": "#cccccc", "labelColor": "#5a5a5a" },
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "domainColor": "#cccccc",
+      "tickColor": "#cccccc",
+      "labelColor": "#5a5a5a"
+    },
     "font": "'Source Sans 3', system-ui, sans-serif"
   }
 }

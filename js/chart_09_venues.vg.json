@@ -15,17 +15,44 @@
   },
   "width": "container",
   "height": 620,
-  "padding": { "left": 0, "top": 0, "right": 16, "bottom": 0 },
+  "padding": {
+    "left": 0,
+    "top": 0,
+    "right": 16,
+    "bottom": 0
+  },
   "background": null,
-  "data": { "url": "data/venues.csv" },
+  "data": {
+    "url": "data/venues.csv"
+  },
   "params": [
     {
       "name": "venues_state_sel",
       "value": "All",
       "bind": {
         "input": "select",
-        "options": ["All", "Victoria", "New South Wales", "Queensland", "Western Australia", "South Australia", "Tasmania", "Northern Territory", "Australian Capital Territory"],
-        "labels": ["All states", "Victoria", "New South Wales", "Queensland", "Western Australia", "South Australia", "Tasmania", "Northern Territory", "ACT"],
+        "options": [
+          "All",
+          "Victoria",
+          "New South Wales",
+          "Queensland",
+          "Western Australia",
+          "South Australia",
+          "Tasmania",
+          "Northern Territory",
+          "Australian Capital Territory"
+        ],
+        "labels": [
+          "All states",
+          "Victoria",
+          "New South Wales",
+          "Queensland",
+          "Western Australia",
+          "South Australia",
+          "Tasmania",
+          "Northern Territory",
+          "ACT"
+        ],
         "name": "Focus on: "
       }
     }
@@ -40,7 +67,11 @@
     "y": {
       "field": "venue",
       "type": "nominal",
-      "sort": { "field": "matches", "order": "descending", "op": "sum" },
+      "sort": {
+        "field": "matches",
+        "order": "descending",
+        "op": "sum"
+      },
       "title": null,
       "axis": {
         "labelFontSize": 11,
@@ -67,7 +98,9 @@
       "mark": {
         "type": "bar",
         "cornerRadiusEnd": 3,
-        "height": { "band": 0.72 }
+        "height": {
+          "band": 0.72
+        }
       },
       "encoding": {
         "color": {
@@ -75,8 +108,26 @@
           "type": "nominal",
           "title": "State",
           "scale": {
-            "domain": ["Victoria", "New South Wales", "Queensland", "Western Australia", "South Australia", "Tasmania", "Northern Territory", "Australian Capital Territory"],
-            "range":  ["#a0252f", "#2c5f5d", "#c8932b", "#7a4e8f", "#3a6e3a", "#1f6f8b", "#b85c1f", "#8a4f4f"]
+            "domain": [
+              "Victoria",
+              "New South Wales",
+              "Queensland",
+              "Western Australia",
+              "South Australia",
+              "Tasmania",
+              "Northern Territory",
+              "Australian Capital Territory"
+            ],
+            "range": [
+              "#a0252f",
+              "#2c5f5d",
+              "#c8932b",
+              "#7a4e8f",
+              "#3a6e3a",
+              "#1f6f8b",
+              "#b85c1f",
+              "#8a4f4f"
+            ]
           },
           "legend": {
             "orient": "top",
@@ -91,12 +142,34 @@
           "field": "row_opacity",
           "type": "quantitative",
           "legend": null,
-          "scale": { "domain": [0, 1], "range": [0, 1] }
+          "scale": {
+            "domain": [
+              0,
+              1
+            ],
+            "range": [
+              0,
+              1
+            ]
+          }
         },
         "tooltip": [
-          { "field": "venue", "type": "nominal", "title": "Stadium" },
-          { "field": "state", "type": "nominal", "title": "State" },
-          { "field": "matches", "type": "quantitative", "format": ",", "title": "Matches" }
+          {
+            "field": "venue",
+            "type": "nominal",
+            "title": "Stadium"
+          },
+          {
+            "field": "state",
+            "type": "nominal",
+            "title": "State"
+          },
+          {
+            "field": "matches",
+            "type": "quantitative",
+            "format": ",",
+            "title": "Matches"
+          }
         ]
       }
     },
@@ -110,19 +183,39 @@
         "color": "#5a5a5a"
       },
       "encoding": {
-        "text": { "field": "matches", "type": "quantitative", "format": "," },
+        "text": {
+          "field": "matches",
+          "type": "quantitative",
+          "format": ","
+        },
         "opacity": {
           "field": "row_opacity",
           "type": "quantitative",
           "legend": null,
-          "scale": { "domain": [0, 1], "range": [0, 1] }
+          "scale": {
+            "domain": [
+              0,
+              1
+            ],
+            "range": [
+              0,
+              1
+            ]
+          }
         }
       }
     }
   ],
   "config": {
-    "view": { "stroke": null },
-    "axis": { "domainColor": "#cccccc", "tickColor": "#cccccc", "labelColor": "#5a5a5a", "grid": false },
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "domainColor": "#cccccc",
+      "tickColor": "#cccccc",
+      "labelColor": "#5a5a5a",
+      "grid": false
+    },
     "font": "'Source Sans 3', system-ui, sans-serif"
   }
 }

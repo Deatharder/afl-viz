@@ -14,14 +14,38 @@
     "subtitleColor": "#5a5a5a"
   },
   "background": null,
-  "padding": { "left": 0, "top": 0, "right": 16, "bottom": 0 },
+  "padding": {
+    "left": 0,
+    "top": 0,
+    "right": 16,
+    "bottom": 0
+  },
   "params": [
     {
       "name": "club",
       "value": "Collingwood",
       "bind": {
         "input": "select",
-        "options": ["Adelaide", "Brisbane Lions", "Carlton", "Collingwood", "Essendon", "Fremantle", "Geelong", "Gold Coast", "Greater Western Sydney", "Hawthorn", "Melbourne", "North Melbourne", "Port Adelaide", "Richmond", "St Kilda", "Sydney", "West Coast", "Western Bulldogs"],
+        "options": [
+          "Adelaide",
+          "Brisbane Lions",
+          "Carlton",
+          "Collingwood",
+          "Essendon",
+          "Fremantle",
+          "Geelong",
+          "Gold Coast",
+          "Greater Western Sydney",
+          "Hawthorn",
+          "Melbourne",
+          "North Melbourne",
+          "Port Adelaide",
+          "Richmond",
+          "St Kilda",
+          "Sydney",
+          "West Coast",
+          "Western Bulldogs"
+        ],
         "name": "Club: "
       }
     }
@@ -38,44 +62,122 @@
       },
       "width": "container",
       "height": 200,
-      "data": { "url": "data/dashboard_ladder.csv" },
-      "transform": [{ "filter": "datum.team == club" }],
+      "data": {
+        "url": "data/dashboard_ladder.csv"
+      },
+      "transform": [
+        {
+          "filter": "datum.team == club"
+        }
+      ],
       "layer": [
         {
-          "data": { "values": [{ "y1": 0.5, "y2": 8.5 }] },
-          "mark": { "type": "rect", "fill": "#f4ebd9", "opacity": 0.55 },
+          "data": {
+            "values": [
+              {
+                "y1": 0.5,
+                "y2": 8.5
+              }
+            ]
+          },
+          "mark": {
+            "type": "rect",
+            "fill": "#f4ebd9",
+            "opacity": 0.55
+          },
           "encoding": {
-            "y":  { "field": "y1", "type": "quantitative", "scale": { "domain": [18.5, 0.5] } },
-            "y2": { "field": "y2" }
+            "y": {
+              "field": "y1",
+              "type": "quantitative",
+              "scale": {
+                "domain": [
+                  18.5,
+                  0.5
+                ]
+              }
+            },
+            "y2": {
+              "field": "y2"
+            }
           }
         },
         {
-          "mark": { "type": "line", "color": "#a0252f", "strokeWidth": 2, "interpolate": "linear" },
+          "mark": {
+            "type": "line",
+            "color": "#a0252f",
+            "strokeWidth": 2,
+            "interpolate": "linear"
+          },
           "encoding": {
             "x": {
               "field": "year",
               "type": "quantitative",
               "title": null,
-              "scale": { "domain": [1895, 2027] },
-              "axis": { "format": "d", "tickCount": 7, "labelFont": "'Source Sans 3', system-ui, sans-serif", "labelFontSize": 10 }
+              "scale": {
+                "domain": [
+                  1895,
+                  2027
+                ]
+              },
+              "axis": {
+                "format": "d",
+                "tickCount": 7,
+                "labelFont": "'Source Sans 3', system-ui, sans-serif",
+                "labelFontSize": 10
+              }
             },
             "y": {
               "field": "rank",
               "type": "quantitative",
               "title": "Position",
-              "scale": { "domain": [18.5, 0.5] },
-              "axis": { "values": [1, 4, 8, 12, 18], "labelFont": "'Source Sans 3', system-ui, sans-serif", "titleFont": "'Source Sans 3', system-ui, sans-serif", "labelFontSize": 10 }
+              "scale": {
+                "domain": [
+                  18.5,
+                  0.5
+                ]
+              },
+              "axis": {
+                "values": [
+                  1,
+                  4,
+                  8,
+                  12,
+                  18
+                ],
+                "labelFont": "'Source Sans 3', system-ui, sans-serif",
+                "titleFont": "'Source Sans 3', system-ui, sans-serif",
+                "labelFontSize": 10
+              }
             }
           }
         },
         {
-          "mark": { "type": "circle", "size": 35, "color": "#a0252f", "opacity": 0.7 },
+          "mark": {
+            "type": "circle",
+            "size": 35,
+            "color": "#a0252f",
+            "opacity": 0.7
+          },
           "encoding": {
-            "x": { "field": "year", "type": "quantitative" },
-            "y": { "field": "rank", "type": "quantitative" },
+            "x": {
+              "field": "year",
+              "type": "quantitative"
+            },
+            "y": {
+              "field": "rank",
+              "type": "quantitative"
+            },
             "tooltip": [
-              { "field": "year", "type": "quantitative", "title": "Season" },
-              { "field": "rank", "type": "quantitative", "title": "Finished" }
+              {
+                "field": "year",
+                "type": "quantitative",
+                "title": "Season"
+              },
+              {
+                "field": "rank",
+                "type": "quantitative",
+                "title": "Finished"
+              }
             ]
           }
         }
@@ -94,37 +196,89 @@
           },
           "width": 420,
           "height": 200,
-          "data": { "url": "data/dashboard_decades.csv" },
+          "data": {
+            "url": "data/dashboard_decades.csv"
+          },
           "transform": [
-            { "filter": "datum.team == club" },
-            { "fold": ["wins", "losses"], "as": ["outcome", "count"] }
+            {
+              "filter": "datum.team == club"
+            },
+            {
+              "fold": [
+                "wins",
+                "losses"
+              ],
+              "as": [
+                "outcome",
+                "count"
+              ]
+            }
           ],
-          "mark": { "type": "bar", "cornerRadius": 2 },
+          "mark": {
+            "type": "bar",
+            "cornerRadius": 2
+          },
           "encoding": {
             "x": {
               "field": "decade",
               "type": "ordinal",
               "title": null,
-              "axis": { "labelFont": "'Source Sans 3', system-ui, sans-serif", "labelAngle": -45, "labelFontSize": 10, "domain": false, "ticks": false }
+              "axis": {
+                "labelFont": "'Source Sans 3', system-ui, sans-serif",
+                "labelAngle": -45,
+                "labelFontSize": 10,
+                "domain": false,
+                "ticks": false
+              }
             },
             "y": {
               "aggregate": "sum",
               "field": "count",
               "type": "quantitative",
               "title": "Matches",
-              "axis": { "labelFont": "'Source Sans 3', system-ui, sans-serif", "titleFont": "'Source Sans 3', system-ui, sans-serif", "labelFontSize": 10 }
+              "axis": {
+                "labelFont": "'Source Sans 3', system-ui, sans-serif",
+                "titleFont": "'Source Sans 3', system-ui, sans-serif",
+                "labelFontSize": 10
+              }
             },
             "color": {
               "field": "outcome",
               "type": "nominal",
               "title": null,
-              "scale": { "domain": ["wins", "losses"], "range": ["#a0252f", "#d8cfb8"] },
-              "legend": { "orient": "top", "labelFont": "'Source Sans 3', system-ui, sans-serif", "labelFontSize": 10, "symbolType": "square" }
+              "scale": {
+                "domain": [
+                  "wins",
+                  "losses"
+                ],
+                "range": [
+                  "#a0252f",
+                  "#d8cfb8"
+                ]
+              },
+              "legend": {
+                "orient": "top",
+                "labelFont": "'Source Sans 3', system-ui, sans-serif",
+                "labelFontSize": 10,
+                "symbolType": "square"
+              }
             },
             "tooltip": [
-              { "field": "decade", "type": "ordinal", "title": "Decade" },
-              { "field": "outcome", "type": "nominal", "title": "Outcome" },
-              { "field": "count", "type": "quantitative", "title": "Matches" }
+              {
+                "field": "decade",
+                "type": "ordinal",
+                "title": "Decade"
+              },
+              {
+                "field": "outcome",
+                "type": "nominal",
+                "title": "Outcome"
+              },
+              {
+                "field": "count",
+                "type": "quantitative",
+                "title": "Matches"
+              }
             ]
           }
         },
@@ -139,36 +293,127 @@
           },
           "width": 300,
           "height": 200,
-          "data": { "url": "data/dashboard_recent_winpct.csv" },
-          "transform": [{ "filter": "datum.team == club" }],
+          "data": {
+            "url": "data/dashboard_recent_winpct.csv"
+          },
+          "transform": [
+            {
+              "filter": "datum.team == club"
+            }
+          ],
           "layer": [
             {
-              "data": { "values": [{ "y": 50 }] },
-              "mark": { "type": "rule", "color": "#999999", "strokeDash": [3, 3], "opacity": 0.6 },
-              "encoding": { "y": { "field": "y", "type": "quantitative" } }
-            },
-            {
-              "mark": { "type": "area", "color": "#a0252f", "opacity": 0.25, "interpolate": "monotone" },
+              "data": {
+                "values": [
+                  {
+                    "y": 50
+                  }
+                ]
+              },
+              "mark": {
+                "type": "rule",
+                "color": "#999999",
+                "strokeDash": [
+                  3,
+                  3
+                ],
+                "opacity": 0.6
+              },
               "encoding": {
-                "x": { "field": "year", "type": "quantitative", "scale": { "domain": [2015, 2025] }, "title": null, "axis": { "format": "d", "tickCount": 6, "labelFont": "'Source Sans 3', system-ui, sans-serif", "labelFontSize": 10 } },
-                "y": { "field": "win_pct", "type": "quantitative", "scale": { "domain": [0, 100] }, "title": "Win %", "axis": { "labelFont": "'Source Sans 3', system-ui, sans-serif", "titleFont": "'Source Sans 3', system-ui, sans-serif", "labelFontSize": 10 } }
+                "y": {
+                  "field": "y",
+                  "type": "quantitative"
+                }
               }
             },
             {
-              "mark": { "type": "line", "color": "#a0252f", "strokeWidth": 2, "interpolate": "monotone" },
+              "mark": {
+                "type": "area",
+                "color": "#a0252f",
+                "opacity": 0.25,
+                "interpolate": "monotone"
+              },
               "encoding": {
-                "x": { "field": "year", "type": "quantitative" },
-                "y": { "field": "win_pct", "type": "quantitative" }
+                "x": {
+                  "field": "year",
+                  "type": "quantitative",
+                  "scale": {
+                    "domain": [
+                      2015,
+                      2025
+                    ]
+                  },
+                  "title": null,
+                  "axis": {
+                    "format": "d",
+                    "tickCount": 6,
+                    "labelFont": "'Source Sans 3', system-ui, sans-serif",
+                    "labelFontSize": 10
+                  }
+                },
+                "y": {
+                  "field": "win_pct",
+                  "type": "quantitative",
+                  "scale": {
+                    "domain": [
+                      0,
+                      100
+                    ]
+                  },
+                  "title": "Win %",
+                  "axis": {
+                    "labelFont": "'Source Sans 3', system-ui, sans-serif",
+                    "titleFont": "'Source Sans 3', system-ui, sans-serif",
+                    "labelFontSize": 10
+                  }
+                }
               }
             },
             {
-              "mark": { "type": "circle", "size": 60, "color": "#a0252f" },
+              "mark": {
+                "type": "line",
+                "color": "#a0252f",
+                "strokeWidth": 2,
+                "interpolate": "monotone"
+              },
               "encoding": {
-                "x": { "field": "year", "type": "quantitative" },
-                "y": { "field": "win_pct", "type": "quantitative" },
+                "x": {
+                  "field": "year",
+                  "type": "quantitative"
+                },
+                "y": {
+                  "field": "win_pct",
+                  "type": "quantitative"
+                }
+              }
+            },
+            {
+              "mark": {
+                "type": "circle",
+                "size": 60,
+                "color": "#a0252f"
+              },
+              "encoding": {
+                "x": {
+                  "field": "year",
+                  "type": "quantitative"
+                },
+                "y": {
+                  "field": "win_pct",
+                  "type": "quantitative"
+                },
                 "tooltip": [
-                  { "field": "year", "type": "quantitative", "title": "Season" },
-                  { "field": "win_pct", "type": "quantitative", "format": ".0f", "title": "Win %" }
+                  {
+                    "field": "year",
+                    "type": "quantitative",
+                    "title": "Season"
+                  },
+                  {
+                    "field": "win_pct",
+                    "type": "quantitative",
+                    "format": ".0f",
+                    "title": "Win %"
+                  }
                 ]
               }
             }
@@ -178,9 +423,18 @@
     }
   ],
   "config": {
-    "view": { "stroke": null },
-    "axis": { "domainColor": "#cccccc", "tickColor": "#cccccc", "labelColor": "#5a5a5a", "grid": false },
-    "concat": { "spacing": 20 },
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "domainColor": "#cccccc",
+      "tickColor": "#cccccc",
+      "labelColor": "#5a5a5a",
+      "grid": false
+    },
+    "concat": {
+      "spacing": 20
+    },
     "font": "'Source Sans 3', system-ui, sans-serif"
   }
 }

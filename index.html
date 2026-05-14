@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="An interactive data visualisation exploring 130 years of AFL football, from its Victorian roots to a national competition. Built with Vega-Lite for FIT2179 Data Visualisation 2." />
+  <meta name="description"
+    content="An interactive data visualisation exploring 130 years of AFL football, from its Victorian roots to a national competition. Built with Vega-Lite for FIT2179 Data Visualisation 2." />
   <title>From Victoria to the Nation: 130 Years of the AFL</title>
 
   <script src="https://cdn.jsdelivr.net/npm/vega@5.25.0"></script>
@@ -15,10 +17,13 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+3:wght@400;500;600;700&family=Fraunces:ital,wght@1,400&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+3:wght@400;500;600;700&family=Fraunces:ital,wght@1,400&display=swap"
+    rel="stylesheet">
 
   <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
   <div class="page">
 
@@ -26,16 +31,20 @@
       <div class="pure-u-1">
         <p class="kicker">FIT2179 · Data Visualisation 2 · 2026</p>
         <h1>From Victoria to the Nation</h1>
-        <p class="lede">For ninety years the AFL was the VFL: a Victorian competition where eight Melbourne clubs played out the season among themselves. In 1987 it stopped being that. This is the story of a national league still half-pretending it's a local one.</p>
+        <p class="lede">For ninety years the AFL was the VFL: a Victorian competition where eight Melbourne clubs played
+          out the season among themselves. In 1987 it stopped being that. This is the story of a national league still
+          half-pretending it's a local one.</p>
       </div>
     </header>
 
     <section class="pure-g">
       <div class="pure-u-1">
         <h2>The big picture across Australia</h2>
-        <p class="section-intro">Across 129 seasons, more than four out of every five AFL matches have been played in Victoria. The map below makes the league's centre of gravity unmistakable.</p>
+        <p class="section-intro">Across 129 seasons, more than four out of every five AFL matches have been played in
+          Victoria. The map below makes the league's centre of gravity unmistakable.</p>
         <div id="vis_map" class="vis-container"></div>
-        <p class="caption">Figure 1 · Total AFL/VFL matches played in each state and territory, 1897 to 2025. Source: AFL Tables match records (akareen/AFL-Data-Analysis).</p>
+        <p class="caption">Figure 1 · Total AFL/VFL matches played in each state and territory, 1897 to 2025. Source:
+          AFL Tables match records (akareen/AFL-Data-Analysis).</p>
       </div>
     </section>
 
@@ -43,26 +52,34 @@
       <div class="pure-u-1 pure-u-md-1-2">
         <div class="description description-left">
           <h2>Premiership cups, unevenly shared</h2>
-          <p>If matches are concentrated in Victoria, premierships are even more so. Sixteen clubs have lifted the cup in 128 grand finals. Three Melbourne foundation clubs (Collingwood, Carlton and Essendon) share nearly half of all premierships between them.</p>
-          <p>Many of the newer interstate clubs have just one or two flags. Some, like Gold Coast and GWS, have none yet. Fitzroy, the only foundation club to fold rather than relocate, retains eight flags from before its 1996 merger.</p>
+          <p>If matches are concentrated in Victoria, premierships are even more so. Sixteen clubs have lifted the cup
+            in 128 grand finals. Three Melbourne foundation clubs (Collingwood, Carlton and Essendon) share nearly half
+            of all premierships between them.</p>
+          <p>Many of the newer interstate clubs have just one or two flags. Some, like Gold Coast and GWS, have none
+            yet. Fitzroy, the only foundation club to fold rather than relocate, retains eight flags from before its
+            1996 merger.</p>
         </div>
       </div>
       <div class="pure-u-1 pure-u-md-1-2">
         <div id="vis_premierships" class="vis-container"></div>
-        <p class="caption">Figure 2 · Total premierships won, by club, 1897 to 2024. Continuity-name aggregation: Footscray counts toward Western Bulldogs, South Melbourne toward Sydney.</p>
+        <p class="caption">Figure 2 · Total premierships won, by club, 1897 to 2024. Continuity-name aggregation:
+          Footscray counts toward Western Bulldogs, South Melbourne toward Sydney.</p>
       </div>
     </section>
 
     <section class="pure-g">
       <div class="pure-u-1 pure-u-md-2-3">
         <div id="vis_timeline" class="vis-container"></div>
-        <p class="caption">Figure 3 · Number of clubs competing each season, 1897 to 2025. Annotated with major expansion events.</p>
+        <p class="caption">Figure 3 · Number of clubs competing each season, 1897 to 2025. Annotated with major
+          expansion events.</p>
       </div>
       <div class="pure-u-1 pure-u-md-1-3">
         <div class="description description-right">
           <h2>The league grew over time</h2>
-          <p>The VFL began with eight Melbourne clubs in 1897 and stayed that way for a quarter-century until three new Victorian clubs joined in 1925.</p>
-          <p>Real expansion only came in 1987, when West Coast and Brisbane became the first non-Victorian sides. Five more interstate clubs followed over the next 25 years, taking the modern AFL to 18 teams.</p>
+          <p>The VFL began with eight Melbourne clubs in 1897 and stayed that way for a quarter-century until three new
+            Victorian clubs joined in 1925.</p>
+          <p>Real expansion only came in 1987, when West Coast and Brisbane became the first non-Victorian sides. Five
+            more interstate clubs followed over the next 25 years, taking the modern AFL to 18 teams.</p>
         </div>
       </div>
     </section>
@@ -70,40 +87,60 @@
     <section class="pure-g">
       <div class="pure-u-1">
         <h2>How the game itself has changed</h2>
-        <p class="section-intro">More clubs, more matches, and a very different style of football. Three views of how AFL has evolved over 130 years: scoring rates, match competitiveness, and season length.</p>
+        <p class="section-intro">More clubs, more matches, and a very different style of football. Three views of how
+          AFL has evolved over 130 years: scoring rates, match competitiveness, and season length.</p>
       </div>
-      <div class="pure-u-1 pure-u-md-1-3"><div id="vis_scoring" class="vis-container"></div></div>
-      <div class="pure-u-1 pure-u-md-1-3"><div id="vis_margin" class="vis-container"></div></div>
-      <div class="pure-u-1 pure-u-md-1-3"><div id="vis_matches" class="vis-container"></div></div>
+      <div class="pure-u-1 pure-u-md-1-3">
+        <div id="vis_scoring" class="vis-container"></div>
+      </div>
+      <div class="pure-u-1 pure-u-md-1-3">
+        <div id="vis_margin" class="vis-container"></div>
+      </div>
+      <div class="pure-u-1 pure-u-md-1-3">
+        <div id="vis_matches" class="vis-container"></div>
+      </div>
       <div class="pure-u-1">
-        <p class="caption">Figures 4 to 6 · Scoring, match competitiveness and season length over time. The shaded period on the scoring chart marks the high-scoring 1975 to 1990 era. Source: AFL match records.</p>
+        <p class="caption">Figures 4 to 6 · Scoring, match competitiveness and season length over time. The shaded
+          period on the scoring chart marks the high-scoring 1975 to 1990 era. Source: AFL match records.</p>
       </div>
     </section>
 
     <section class="pure-g">
       <div class="pure-u-1">
         <h2>Decades of dominance</h2>
-        <p class="section-intro">Premierships don't come evenly. They come in dynasties. The heatmap below makes the clusters visible. Hawthorn won four flags in eight years across the 1980s. Brisbane Lions, an interstate club playing finals only after 1995, won three consecutive premierships in 2001 to 2003. The dark-bordered cells mark every decade where one club won three or more.</p>
+        <p class="section-intro">Premierships don't come evenly. They come in dynasties. The heatmap below makes the
+          clusters visible. Hawthorn won four flags in eight years across the 1980s. Brisbane Lions, an interstate club
+          playing finals only after 1995, won three consecutive premierships in 2001 to 2003. The dark-bordered cells
+          mark every decade where one club won three or more.</p>
         <div id="vis_heatmap" class="vis-container"></div>
-        <p class="caption">Figure 7 · Premierships won by each club, by decade. Empty cells indicate the club did not win that decade. Dark borders mark dynasty cells (3 or more flags in a decade).</p>
+        <p class="caption">Figure 7 · Premierships won by each club, by decade. Empty cells indicate the club did not
+          win that decade. Dark borders mark dynasty cells (3 or more flags in a decade).</p>
       </div>
     </section>
 
     <section class="pure-g">
       <div class="pure-u-1">
         <h2>A century of wins and losses</h2>
-        <p class="section-intro">Plotted by their total wins against their total losses, two stories appear at once. Foundation clubs sit top-right with more than two thousand matches each. Recent interstate sides cluster near the origin. Only Collingwood sits clearly below the diagonal with more wins than losses. The two clubs that played less than three hundred matches are 1908 to 1914 University FC (defunct, the league's worst-ever record at 21%) and 2011 to today's Gold Coast Suns.</p>
+        <p class="section-intro">Plotted by their total wins against their total losses, two stories appear at once.
+          Foundation clubs sit top-right with more than two thousand matches each. Recent interstate sides cluster near
+          the origin. Only Collingwood sits clearly below the diagonal with more wins than losses. The two clubs that
+          played less than three hundred matches are 1908 to 1914 University FC (defunct, the league's worst-ever record
+          at 21%) and 2011 to today's Gold Coast Suns.</p>
         <div id="vis_bubble" class="vis-container"></div>
-        <p class="caption">Figure 8 · Total wins versus total losses for every club to ever compete in the AFL/VFL, 1897 to 2025. Source: AFL match records.</p>
+        <p class="caption">Figure 8 · Total wins versus total losses for every club to ever compete in the AFL/VFL, 1897
+          to 2025. Source: AFL match records.</p>
       </div>
     </section>
 
     <section class="pure-g">
       <div class="pure-u-1">
         <h2>Every ground in the league</h2>
-        <p class="section-intro">The map at the top of this page shows where matches were played by state. Here is the same story at finer grain: 32 individual stadiums ranked by matches hosted. The M.C.G. alone has staged more games than every interstate venue combined.</p>
+        <p class="section-intro">The map at the top of this page shows where matches were played by state. Here is the
+          same story at finer grain: 32 individual stadiums ranked by matches hosted. The M.C.G. alone has staged more
+          games than every interstate venue combined.</p>
         <div id="vis_stadiums" class="vis-container"></div>
-        <p class="caption">Figure 9 · Total matches hosted at every AFL/VFL ground, colour-coded by state. Use the dropdown or click a colour in the legend to focus on one state. Source: AFL match records.</p>
+        <p class="caption">Figure 9 · Total matches hosted at every AFL/VFL ground, colour-coded by state. Use the
+          dropdown or click a colour in the legend to focus on one state. Source: AFL match records.</p>
       </div>
     </section>
 
@@ -114,36 +151,51 @@
       </div>
       <div class="pure-u-1 pure-u-md-1-2">
         <div id="vis_density" class="vis-container"></div>
-        <p class="caption">Figure 11 · Distribution of winning margins per match, stratified by era. Median margin and blowout share annotated per panel.</p>
+        <p class="caption">Figure 11 · Distribution of winning margins per match, stratified by era. Median margin and
+          blowout share annotated per panel.</p>
       </div>
     </section>
 
     <section class="pure-g">
       <div class="pure-u-1">
         <h2>The rise and fall of dynasties</h2>
-        <p class="section-intro">Premierships come in clusters, not waves. This chart traces the final ladder position of every club to win a flag since 2000. Brisbane's three-peat collapses into a decade in the bottom four. Geelong rules from 2007 to 2011. Hawthorn climbs to its 2013 to 2015 three-peat. Richmond, four years from the wooden spoon in 2016, wins three flags in four years. Hover any coloured line to highlight that club's path.</p>
+        <p class="section-intro">Premierships come in clusters, not waves. This chart traces the final ladder position
+          of every club to win a flag since 2000. Brisbane's three-peat collapses into a decade in the bottom four.
+          Geelong rules from 2007 to 2011. Hawthorn climbs to its 2013 to 2015 three-peat. Richmond, four years from the
+          wooden spoon in 2016, wins three flags in four years. Hover any coloured line to highlight that club's path.
+        </p>
         <div id="vis_radial" class="vis-container"></div>
-        <p class="caption">Figure 12 · Final regular-season ladder position for the six clubs to win a premiership between 2000 and 2024. Derived from regular-season match records.</p>
+        <p class="caption">Figure 12 · Final regular-season ladder position for the six clubs to win a premiership
+          between 2000 and 2024. Derived from regular-season match records.</p>
       </div>
     </section>
 
     <section class="pure-g">
       <div class="pure-u-1">
         <h2>Explore the data yourself</h2>
-        <p class="section-intro">Pick any club from the dropdown below and three coordinated charts update together. The line traces every ladder finish in the club's history. The decade bars show its overall record. The line on the right shows recent form.</p>
+        <p class="section-intro">Pick any club from the dropdown below and three coordinated charts update together. The
+          line traces every ladder finish in the club's history. The decade bars show its overall record. The line on
+          the right shows recent form.</p>
         <div id="vis_dashboard" class="vis-container"></div>
-        <p class="caption">Figure 13 · Interactive dashboard. Selection in the club dropdown filters all three sub-views simultaneously. Derived from regular-season match records 1897 to 2025.</p>
+        <p class="caption">Figure 13 · Interactive dashboard. Selection in the club dropdown filters all three sub-views
+          simultaneously. Derived from regular-season match records 1897 to 2025.</p>
       </div>
     </section>
 
     <footer class="pure-g metadata">
       <div class="pure-u-1">
         <h2>About</h2>
-        <p><strong>Author:</strong> Dev Gupta · <strong>Student ID:</strong> 36695769 · <strong>Date:</strong> May 2026</p>
-        <p><strong>Data sources:</strong> <a href="https://github.com/akareen/AFL-Data-Analysis" target="_blank">AFL match data 1897 to 2025 (akareen/AFL-Data-Analysis)</a>, <a href="https://github.com/tonywr71/GeoJson-Data" target="_blank">Australian states GeoJSON (tonywr71)</a>.</p>
-        <p><strong>GitHub:</strong> <a href="https://github.com/Deatharder/afl-viz" target="_blank">github.com/Deatharder/afl-viz</a></p>
-        <p><strong>Data notes.</strong> Records cover the 1897 to 2025 seasons inclusive. The 2025 season was in progress at time of writing. Continuity-name aggregation: Footscray and Western Bulldogs are counted as one club, South Melbourne and Sydney as one club, Brisbane Bears and Brisbane Lions as one club, Kangaroos brand and North Melbourne as one club. Fitzroy and University FC (both defunct) are preserved as separate entities. The Australian states GeoJSON was simplified to reduce file size; only state-level boundaries are shown.</p>
-        <p class="ai-ack"><strong>Acknowledgement of AI use.</strong> Claude (Anthropic) was used as a learning aid during this project. It explained Vega-Lite syntax, helped scaffold initial JSON spec templates that I then adapted to my data and design choices, reviewed prose for grammar and clarity, and suggested debugging steps when charts failed to render. The choice of topic, narrative, dataset, idiom selection, design decisions, and all written content are my own.</p>
+        <p><strong>Author:</strong> Dev Gupta · <strong>Student ID:</strong> 36695769</p>
+        <p><strong>Data sources:</strong> <a href="https://github.com/akareen/AFL-Data-Analysis" target="_blank">AFL
+            match data 1897 to 2025 (akareen/AFL-Data-Analysis)</a>, <a href="https://github.com/tonywr71/GeoJson-Data"
+            target="_blank">Australian states GeoJSON (tonywr71)</a>.</p>
+        <p><strong>GitHub:</strong> <a href="https://github.com/Deatharder/afl-viz"
+            target="_blank">github.com/Deatharder/afl-viz</a></p>
+        <p class="ai-ack"><strong>Acknowledgement of AI use.</strong> Claude (Anthropic) was used as a learning aid
+          during this project. It explained Vega-Lite syntax, helped scaffold initial JSON spec templates that I then
+          adapted to my data and design choices, reviewed prose for grammar and clarity, and suggested debugging steps
+          when charts failed to render. The choice of topic, narrative, dataset, idiom selection, design decisions, and
+          all written content are my own.</p>
       </div>
     </footer>
 
@@ -151,19 +203,20 @@
 
   <script>
     const opts = { actions: false, renderer: "svg" };
-    vegaEmbed("#vis_map",          "js/chart_01_australia_map.vg.json",         opts).catch(console.error);
+    vegaEmbed("#vis_map", "js/chart_01_australia_map.vg.json", opts).catch(console.error);
     vegaEmbed("#vis_premierships", "js/chart_02_premierships_lollipop.vg.json", opts).catch(console.error);
-    vegaEmbed("#vis_timeline",     "js/chart_03_teams_timeline.vg.json",        opts).catch(console.error);
-    vegaEmbed("#vis_scoring",      "js/chart_04_scoring_evolution.vg.json",     opts).catch(console.error);
-    vegaEmbed("#vis_margin",       "js/chart_05_margin_evolution.vg.json",      opts).catch(console.error);
-    vegaEmbed("#vis_matches",      "js/chart_06_matches_per_year.vg.json",      opts).catch(console.error);
-    vegaEmbed("#vis_heatmap",      "js/chart_07_heatmap.vg.json",               opts).catch(console.error);
-    vegaEmbed("#vis_bubble",       "js/chart_08_bubble.vg.json",                opts).catch(console.error);
-    vegaEmbed("#vis_stadiums",     "js/chart_09_venues.vg.json",                opts).catch(console.error);
-    vegaEmbed("#vis_slope",        "js/chart_10_slope_home_away.vg.json",       opts).catch(console.error);
-    vegaEmbed("#vis_density",      "js/chart_11_margin_density.vg.json",        opts).catch(console.error);
-    vegaEmbed("#vis_radial",       "js/chart_12_bump.vg.json",                  opts).catch(console.error);
-    vegaEmbed("#vis_dashboard",    "js/chart_13_dashboard.vg.json",             opts).catch(console.error);
+    vegaEmbed("#vis_timeline", "js/chart_03_teams_timeline.vg.json", opts).catch(console.error);
+    vegaEmbed("#vis_scoring", "js/chart_04_scoring_evolution.vg.json", opts).catch(console.error);
+    vegaEmbed("#vis_margin", "js/chart_05_margin_evolution.vg.json", opts).catch(console.error);
+    vegaEmbed("#vis_matches", "js/chart_06_matches_per_year.vg.json", opts).catch(console.error);
+    vegaEmbed("#vis_heatmap", "js/chart_07_heatmap.vg.json", opts).catch(console.error);
+    vegaEmbed("#vis_bubble", "js/chart_08_bubble.vg.json", opts).catch(console.error);
+    vegaEmbed("#vis_stadiums", "js/chart_09_venues.vg.json", opts).catch(console.error);
+    vegaEmbed("#vis_slope", "js/chart_10_slope_home_away.vg.json", opts).catch(console.error);
+    vegaEmbed("#vis_density", "js/chart_11_margin_density.vg.json", opts).catch(console.error);
+    vegaEmbed("#vis_radial", "js/chart_12_bump.vg.json", opts).catch(console.error);
+    vegaEmbed("#vis_dashboard", "js/chart_13_dashboard.vg.json", opts).catch(console.error);
   </script>
 </body>
+
 </html>

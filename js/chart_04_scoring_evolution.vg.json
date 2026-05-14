@@ -15,38 +15,99 @@
   },
   "width": "container",
   "height": 220,
-  "padding": { "left": 0, "top": 0, "right": 16, "bottom": 0 },
+  "padding": {
+    "left": 0,
+    "top": 0,
+    "right": 16,
+    "bottom": 0
+  },
   "background": null,
-  "data": { "url": "data/avg_score_per_year.csv" },
+  "data": {
+    "url": "data/avg_score_per_year.csv"
+  },
   "encoding": {
     "x": {
       "field": "year",
       "type": "quantitative",
       "title": null,
-      "scale": { "domain": [1895, 2027] },
-      "axis": { "format": "d", "tickCount": 5, "labelFont": "'Source Sans 3', system-ui, sans-serif", "labelFontSize": 10 }
+      "scale": {
+        "domain": [
+          1895,
+          2027
+        ]
+      },
+      "axis": {
+        "format": "d",
+        "tickCount": 5,
+        "labelFont": "'Source Sans 3', system-ui, sans-serif",
+        "labelFontSize": 10
+      }
     },
     "y": {
       "field": "avg_total_points",
       "type": "quantitative",
       "title": "Points",
-      "scale": { "domain": [50, 260] },
-      "axis": { "labelFont": "'Source Sans 3', system-ui, sans-serif", "titleFont": "'Source Sans 3', system-ui, sans-serif", "labelFontSize": 10, "tickMinStep": 50 }
+      "scale": {
+        "domain": [
+          50,
+          260
+        ]
+      },
+      "axis": {
+        "labelFont": "'Source Sans 3', system-ui, sans-serif",
+        "titleFont": "'Source Sans 3', system-ui, sans-serif",
+        "labelFontSize": 10,
+        "tickMinStep": 50
+      }
     }
   },
   "layer": [
     {
-      "data": { "values": [{ "x1": 1975, "x2": 1990, "y1": 50, "y2": 260, "label": "1975 to 1990: peak scoring era" }] },
-      "mark": { "type": "rect", "color": "#f4d4c8", "opacity": 0.45 },
+      "data": {
+        "values": [
+          {
+            "x1": 1975,
+            "x2": 1990,
+            "y1": 50,
+            "y2": 260,
+            "label": "1975 to 1990: peak scoring era"
+          }
+        ]
+      },
+      "mark": {
+        "type": "rect",
+        "color": "#f4d4c8",
+        "opacity": 0.45
+      },
       "encoding": {
-        "x":  { "field": "x1", "type": "quantitative" },
-        "x2": { "field": "x2", "type": "quantitative" },
-        "y":  { "field": "y1", "type": "quantitative" },
-        "y2": { "field": "y2", "type": "quantitative" }
+        "x": {
+          "field": "x1",
+          "type": "quantitative"
+        },
+        "x2": {
+          "field": "x2",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "y1",
+          "type": "quantitative"
+        },
+        "y2": {
+          "field": "y2",
+          "type": "quantitative"
+        }
       }
     },
     {
-      "data": { "values": [{ "year": 1982, "y": 252, "label": "Peak: 1975 to 1990" }] },
+      "data": {
+        "values": [
+          {
+            "year": 1982,
+            "y": 252,
+            "label": "Peak: 1975 to 1990"
+          }
+        ]
+      },
       "mark": {
         "type": "text",
         "fontSize": 10,
@@ -57,37 +118,102 @@
         "align": "center"
       },
       "encoding": {
-        "x": { "field": "year", "type": "quantitative" },
-        "y": { "field": "y", "type": "quantitative" },
-        "text": { "field": "label" }
+        "x": {
+          "field": "year",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "y",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "label"
+        }
       }
     },
     {
-      "mark": { "type": "line", "color": "#a0252f", "strokeWidth": 1.8, "interpolate": "monotone" }
+      "mark": {
+        "type": "line",
+        "color": "#a0252f",
+        "strokeWidth": 1.8,
+        "interpolate": "monotone"
+      }
     },
     {
       "params": [
         {
           "name": "hover4",
-          "select": { "type": "point", "fields": ["year"], "nearest": true, "on": "mouseover", "clear": "mouseout" }
+          "select": {
+            "type": "point",
+            "fields": [
+              "year"
+            ],
+            "nearest": true,
+            "on": "mouseover",
+            "clear": "mouseout"
+          }
         }
       ],
-      "mark": { "type": "circle", "size": 80, "color": "#a0252f", "opacity": 0 },
+      "mark": {
+        "type": "circle",
+        "size": 80,
+        "color": "#a0252f",
+        "opacity": 0
+      },
       "encoding": {
         "opacity": {
-          "condition": { "param": "hover4", "empty": false, "value": 1 },
+          "condition": {
+            "param": "hover4",
+            "empty": false,
+            "value": 1
+          },
           "value": 0
         },
         "tooltip": [
-          { "field": "year", "type": "quantitative", "title": "Year" },
-          { "field": "avg_total_points", "type": "quantitative", "format": ".1f", "title": "Avg points" }
+          {
+            "field": "year",
+            "type": "quantitative",
+            "title": "Year"
+          },
+          {
+            "field": "avg_total_points",
+            "type": "quantitative",
+            "format": ".1f",
+            "title": "Avg points"
+          }
         ]
       }
     },
     {
-      "transform": [{ "filter": { "param": "hover4", "empty": false } }],
-      "mark": { "type": "rule", "color": "#1a1a1a", "opacity": 0.4, "strokeDash": [2, 2] }
+      "transform": [
+        {
+          "filter": {
+            "param": "hover4",
+            "empty": false
+          }
+        }
+      ],
+      "mark": {
+        "type": "rule",
+        "color": "#1a1a1a",
+        "opacity": 0.4,
+        "strokeDash": [
+          2,
+          2
+        ]
+      }
     }
   ],
-  "config": { "view": { "stroke": null }, "axis": { "domainColor": "#cccccc", "tickColor": "#cccccc", "labelColor": "#5a5a5a", "grid": false }, "font": "'Source Sans 3', system-ui, sans-serif" }
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "domainColor": "#cccccc",
+      "tickColor": "#cccccc",
+      "labelColor": "#5a5a5a",
+      "grid": false
+    },
+    "font": "'Source Sans 3', system-ui, sans-serif"
+  }
 }

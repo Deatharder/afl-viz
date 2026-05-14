@@ -15,11 +15,20 @@
   },
   "width": "container",
   "height": 420,
-  "padding": { "left": 0, "top": 0, "right": 20, "bottom": 0 },
+  "padding": {
+    "left": 0,
+    "top": 0,
+    "right": 20,
+    "bottom": 0
+  },
   "background": null,
-  "data": { "url": "data/premierships_per_team.csv" },
+  "data": {
+    "url": "data/premierships_per_team.csv"
+  },
   "transform": [
-    { "filter": "datum.premierships > 0" },
+    {
+      "filter": "datum.premierships > 0"
+    },
     {
       "calculate": "datum.team == 'Greater Western Sydney' ? 'GWS' : (datum.team == 'Western Bulldogs' ? 'W. Bulldogs' : (datum.team == 'North Melbourne' ? 'Nth Melbourne' : (datum.team == 'Brisbane Lions' ? 'Brisbane' : datum.team)))",
       "as": "team_short"
@@ -29,7 +38,10 @@
     "y": {
       "field": "team_short",
       "type": "nominal",
-      "sort": { "field": "premierships", "order": "descending" },
+      "sort": {
+        "field": "premierships",
+        "order": "descending"
+      },
       "title": null,
       "axis": {
         "labelFontSize": 12,
@@ -54,14 +66,32 @@
   },
   "layer": [
     {
-      "mark": { "type": "bar", "color": "#a0252f", "height": 2, "cornerRadius": 0 }
+      "mark": {
+        "type": "bar",
+        "color": "#a0252f",
+        "height": 2,
+        "cornerRadius": 0
+      }
     },
     {
-      "mark": { "type": "circle", "size": 280, "color": "#a0252f", "opacity": 1 },
+      "mark": {
+        "type": "circle",
+        "size": 280,
+        "color": "#a0252f",
+        "opacity": 1
+      },
       "encoding": {
         "tooltip": [
-          { "field": "team", "type": "nominal", "title": "Club" },
-          { "field": "premierships", "type": "quantitative", "title": "Premierships" }
+          {
+            "field": "team",
+            "type": "nominal",
+            "title": "Club"
+          },
+          {
+            "field": "premierships",
+            "type": "quantitative",
+            "title": "Premierships"
+          }
         ]
       }
     },
@@ -76,13 +106,23 @@
         "font": "'Source Sans 3', system-ui, sans-serif"
       },
       "encoding": {
-        "text": { "field": "premierships", "type": "quantitative", "format": "d" }
+        "text": {
+          "field": "premierships",
+          "type": "quantitative",
+          "format": "d"
+        }
       }
     }
   ],
   "config": {
-    "view": { "stroke": null },
-    "axis": { "domainColor": "#cccccc", "tickColor": "#cccccc", "labelColor": "#5a5a5a" },
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "domainColor": "#cccccc",
+      "tickColor": "#cccccc",
+      "labelColor": "#5a5a5a"
+    },
     "font": "'Source Sans 3', system-ui, sans-serif"
   }
 }

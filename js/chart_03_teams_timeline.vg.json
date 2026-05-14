@@ -15,14 +15,24 @@
   },
   "width": "container",
   "height": 360,
-  "padding": { "left": 0, "top": 0, "right": 20, "bottom": 0 },
+  "padding": {
+    "left": 0,
+    "top": 0,
+    "right": 20,
+    "bottom": 0
+  },
   "background": null,
   "encoding": {
     "x": {
       "field": "year",
       "type": "quantitative",
       "title": null,
-      "scale": { "domain": [1895, 2027] },
+      "scale": {
+        "domain": [
+          1895,
+          2027
+        ]
+      },
       "axis": {
         "format": "d",
         "tickCount": 8,
@@ -33,14 +43,26 @@
   },
   "layer": [
     {
-      "data": { "url": "data/teams_in_league.csv" },
-      "mark": { "type": "area", "color": "#f4d4c8", "opacity": 0.6, "interpolate": "step-after" },
+      "data": {
+        "url": "data/teams_in_league.csv"
+      },
+      "mark": {
+        "type": "area",
+        "color": "#f4d4c8",
+        "opacity": 0.6,
+        "interpolate": "step-after"
+      },
       "encoding": {
         "y": {
           "field": "teams",
           "type": "quantitative",
           "title": null,
-          "scale": { "domain": [0, 22] },
+          "scale": {
+            "domain": [
+              0,
+              22
+            ]
+          },
           "axis": {
             "tickMinStep": 2,
             "labelFont": "'Source Sans 3', system-ui, sans-serif",
@@ -50,38 +72,92 @@
       }
     },
     {
-      "data": { "url": "data/teams_in_league.csv" },
-      "mark": { "type": "line", "color": "#a0252f", "strokeWidth": 2.5, "interpolate": "step-after" },
+      "data": {
+        "url": "data/teams_in_league.csv"
+      },
+      "mark": {
+        "type": "line",
+        "color": "#a0252f",
+        "strokeWidth": 2.5,
+        "interpolate": "step-after"
+      },
       "encoding": {
-        "y": { "field": "teams", "type": "quantitative" },
+        "y": {
+          "field": "teams",
+          "type": "quantitative"
+        },
         "tooltip": [
-          { "field": "year", "type": "quantitative", "title": "Year" },
-          { "field": "teams", "type": "quantitative", "title": "Clubs in league" }
+          {
+            "field": "year",
+            "type": "quantitative",
+            "title": "Year"
+          },
+          {
+            "field": "teams",
+            "type": "quantitative",
+            "title": "Clubs in league"
+          }
         ]
       }
     },
     {
       "data": {
         "values": [
-          { "year": 1925 },
-          { "year": 1987 },
-          { "year": 1994 },
-          { "year": 2012 }
+          {
+            "year": 1925
+          },
+          {
+            "year": 1987
+          },
+          {
+            "year": 1994
+          },
+          {
+            "year": 2012
+          }
         ]
       },
-      "mark": { "type": "rule", "color": "#1a1a1a", "strokeDash": [3, 3], "opacity": 0.5 },
+      "mark": {
+        "type": "rule",
+        "color": "#1a1a1a",
+        "strokeDash": [
+          3,
+          3
+        ],
+        "opacity": 0.5
+      },
       "encoding": {
-        "y": { "datum": 0 },
-        "y2": { "datum": 19 }
+        "y": {
+          "datum": 0
+        },
+        "y2": {
+          "datum": 19
+        }
       }
     },
     {
       "data": {
         "values": [
-          { "year": 1925, "y": 20.5, "label": "1925" },
-          { "year": 1987, "y": 20.5, "label": "1987" },
-          { "year": 1994, "y": 19.4, "label": "1991 to 97" },
-          { "year": 2012, "y": 20.5, "label": "2011 to 12" }
+          {
+            "year": 1925,
+            "y": 20.5,
+            "label": "1925"
+          },
+          {
+            "year": 1987,
+            "y": 20.5,
+            "label": "1987"
+          },
+          {
+            "year": 1994,
+            "y": 19.4,
+            "label": "1991 to 97"
+          },
+          {
+            "year": 2012,
+            "y": 20.5,
+            "label": "2011 to 12"
+          }
         ]
       },
       "mark": {
@@ -93,14 +169,26 @@
         "font": "'Source Sans 3', system-ui, sans-serif"
       },
       "encoding": {
-        "y": { "field": "y", "type": "quantitative" },
-        "text": { "field": "label" }
+        "y": {
+          "field": "y",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "label"
+        }
       }
     }
   ],
   "config": {
-    "view": { "stroke": null },
-    "axis": { "domainColor": "#cccccc", "tickColor": "#cccccc", "labelColor": "#5a5a5a", "grid": false },
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "domainColor": "#cccccc",
+      "tickColor": "#cccccc",
+      "labelColor": "#5a5a5a",
+      "grid": false
+    },
     "font": "'Source Sans 3', system-ui, sans-serif"
   }
 }

@@ -15,14 +15,26 @@
   },
   "width": "container",
   "height": 380,
-  "padding": { "left": 0, "top": 0, "right": 16, "bottom": 0 },
+  "padding": {
+    "left": 0,
+    "top": 0,
+    "right": 16,
+    "bottom": 0
+  },
   "background": null,
-  "data": { "url": "data/score_margins.csv" },
+  "data": {
+    "url": "data/score_margins.csv"
+  },
   "facet": {
     "row": {
       "field": "era",
       "type": "ordinal",
-      "sort": ["1897 to 1929", "1930 to 1959", "1960 to 1989", "1990 to 2025"],
+      "sort": [
+        "1897 to 1929",
+        "1930 to 1959",
+        "1960 to 1989",
+        "1990 to 2025"
+      ],
       "title": null,
       "header": {
         "labelAngle": 0,
@@ -42,51 +54,125 @@
     "layer": [
       {
         "transform": [
-          { "density": "abs_margin", "extent": [0, 140], "steps": 60 }
+          {
+            "density": "abs_margin",
+            "extent": [
+              0,
+              140
+            ],
+            "steps": 60
+          }
         ],
-        "mark": { "type": "area", "color": "#a0252f", "opacity": 0.7, "interpolate": "monotone" },
+        "mark": {
+          "type": "area",
+          "color": "#a0252f",
+          "opacity": 0.7,
+          "interpolate": "monotone"
+        },
         "encoding": {
           "x": {
             "field": "value",
             "type": "quantitative",
             "title": "Winning margin (points)",
-            "axis": { "labelFont": "'Source Sans 3', system-ui, sans-serif", "titleFont": "'Source Sans 3', system-ui, sans-serif", "labelFontSize": 9, "titleFontSize": 10 }
+            "axis": {
+              "labelFont": "'Source Sans 3', system-ui, sans-serif",
+              "titleFont": "'Source Sans 3', system-ui, sans-serif",
+              "labelFontSize": 9,
+              "titleFontSize": 10
+            }
           },
           "y": {
             "field": "density",
             "type": "quantitative",
             "title": null,
             "axis": null,
-            "scale": { "domain": [0, 0.04] }
+            "scale": {
+              "domain": [
+                0,
+                0.04
+              ]
+            }
           },
           "tooltip": [
-            { "field": "value", "type": "quantitative", "format": ".0f", "title": "Margin" }
+            {
+              "field": "value",
+              "type": "quantitative",
+              "format": ".0f",
+              "title": "Margin"
+            }
           ]
         }
       },
       {
         "transform": [
-          { "aggregate": [{ "op": "min", "field": "era_median", "as": "med" }] }
+          {
+            "aggregate": [
+              {
+                "op": "min",
+                "field": "era_median",
+                "as": "med"
+              }
+            ]
+          }
         ],
-        "mark": { "type": "rule", "color": "#1a1a1a", "strokeDash": [3, 3], "opacity": 0.7, "strokeWidth": 1.5 },
+        "mark": {
+          "type": "rule",
+          "color": "#1a1a1a",
+          "strokeDash": [
+            3,
+            3
+          ],
+          "opacity": 0.7,
+          "strokeWidth": 1.5
+        },
         "encoding": {
-          "x": { "field": "med", "type": "quantitative" }
+          "x": {
+            "field": "med",
+            "type": "quantitative"
+          }
         }
       },
       {
         "transform": [
-          { "aggregate": [{ "op": "min", "field": "era_blowout", "as": "blowout" }] }
+          {
+            "aggregate": [
+              {
+                "op": "min",
+                "field": "era_blowout",
+                "as": "blowout"
+              }
+            ]
+          }
         ],
-        "mark": { "type": "text", "align": "right", "x": "width", "y": 14, "dx": -4, "fontSize": 10, "fontStyle": "italic", "color": "#1a1a1a", "font": "'Source Sans 3', system-ui, sans-serif" },
+        "mark": {
+          "type": "text",
+          "align": "right",
+          "x": "width",
+          "y": 14,
+          "dx": -4,
+          "fontSize": 10,
+          "fontStyle": "italic",
+          "color": "#1a1a1a",
+          "font": "'Source Sans 3', system-ui, sans-serif"
+        },
         "encoding": {
-          "text": { "field": "blowout" }
+          "text": {
+            "field": "blowout"
+          }
         }
       }
     ]
   },
   "config": {
-    "view": { "stroke": null },
-    "axis": { "domainColor": "#cccccc", "tickColor": "#cccccc", "labelColor": "#5a5a5a", "grid": false },
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "domainColor": "#cccccc",
+      "tickColor": "#cccccc",
+      "labelColor": "#5a5a5a",
+      "grid": false
+    },
     "font": "'Source Sans 3', system-ui, sans-serif"
   }
 }
