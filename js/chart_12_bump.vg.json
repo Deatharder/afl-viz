@@ -18,7 +18,7 @@
   "padding": {
     "left": 0,
     "top": 8,
-    "right": 90,
+    "right": 20,
     "bottom": 0
   },
   "background": null,
@@ -39,7 +39,7 @@
       "scale": {
         "domain": [
           1999,
-          2025
+          2027
         ]
       },
       "axis": {
